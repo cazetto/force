@@ -1,0 +1,23 @@
+{
+  "name": "force-docs",
+  "version": "0.0.1",
+  "description": "Force Design System docs",
+  "author": "André Pesci Cazetto <cazetto.andre@gmail.com>",
+  "homepage": "https://github.com/cazetto/force#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cazetto/force.git"
+  },
+  "scripts": {},
+  "bugs": {
+    "url": "https://github.com/cazetto/force/issues"
+  }
+}
