@@ -4,6 +4,22 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "/** DEV SCRIPTS */": "",
+    "dev:docs": "lerna run --scope force-docs dev",
+    "dev:site": "lerna run --scope force-site dev",
+    "dev:components": "lerna run --scope force-components dev",
+    "dev:all": "lerna run dev --parallel",
+    "/** BUILD SCRIPTS */": "",
+    "build:docs": "lerna run --scope force-docs build",
+    "build:site": "lerna run --scope force-site build",
+    "build:components": "lerna run --scope force-components build",
+    "build:all": "lerna run build --stream",
+    "/** TEST SCRIPTS */": "",
+    "test:site": "lerna run --scope force-site test --since master",
+    "test:components": "lerna run --scope force-components test --since master",
+    "test:all": "lerna run test --parallel --since master"
+  },
   "devDependencies": {
     "lerna": "^3.20.2"
   }
