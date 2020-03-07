@@ -18,7 +18,8 @@
   },
   "scripts": {
     "storybook": "start-storybook",
-    "docs:dev": "npm run storybook"
+    "dev": "npm run storybook",
+    "build": "build-storybook -c .storybook"
   },
   "bugs": {
     "url": "https://github.com/cazetto/force/issues"
