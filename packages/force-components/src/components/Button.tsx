@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { ButtonStyled } from './Button.styled';
 
 interface Props {}
 
 const Button: React.FC<Props> = () => {
-  return <button role="button">Button</button>;
+  return <ButtonStyled>Button</ButtonStyled>;
 };
 
 export default Button;
