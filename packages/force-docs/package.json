@@ -16,11 +16,21 @@
     "type": "git",
     "url": "git+https://github.com/cazetto/force.git"
   },
-  "scripts": {},
+  "scripts": {
+    "storybook": "start-storybook",
+    "docs:dev": "npm run storybook"
+  },
   "bugs": {
     "url": "https://github.com/cazetto/force/issues"
   },
   "dependencies": {
-    "force-components": "^0.0.1"
+    "force-components": "^0.0.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@storybook/react": "^5.3.14",
+    "babel-loader": "^8.0.6"
   }
 }
