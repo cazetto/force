@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "/** MONOREPO SCRIPTS */": "",
     "bootstrap": "lerna bootstrap",
     "/** DEV SCRIPTS */": "",
     "dev:docs": "lerna run --scope force-docs dev",
