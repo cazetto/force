@@ -1,12 +1,9 @@
 {
-  "source": [
-    "style-dictionary/properties/color/*.json",
-    "style-dictionary/properties/size/*.json"
-  ],
+  "source": ["properties/color/*.json", "properties/size/*.json"],
   "platforms": {
     "js": {
       "transformGroup": "js",
-      "buildPath": "src/",
+      "buildPath": "src/generated/",
       "files": [
         {
           "destination": "colors.js",

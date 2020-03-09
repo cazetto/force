@@ -19,7 +19,7 @@
     "url": "git+https://github.com/cazetto/force.git"
   },
   "scripts": {
-    "build-dictionary": "style-dictionary build --config ./style-dictionary/config.json",
+    "build-dictionary": "style-dictionary build --config ./src/config.json",
     "build": "npm run build-dictionary && rollup -c",
     "dev": "npm run build-dictionary && rollup -cw",
     "lint": "standard",
@@ -53,7 +53,5 @@
       "jest"
     ]
   },
-  "dependencies": {
-    "rollup-plugin-execute": "^1.1.1"
-  }
+  "dependencies": {}
 }

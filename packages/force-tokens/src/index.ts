@@ -1,7 +1,7 @@
 // @ts-ignore
-import * as colorsVariables from './colors';
+import * as colorsVariables from './__generated__/colors';
 // @ts-ignore
-import * as sizesVariables from './sizes';
+import * as sizesVariables from './__generated__/sizes';
 
 interface Colors {
   ColorPalleteGray100: string;
@@ -105,4 +105,5 @@ const tokens: Tokens = {
 };
 
 export default tokens;
-export { colors, sizes };
+const bla = '';
+export { colors, sizes, bla };
