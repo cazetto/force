@@ -1,11 +1,11 @@
-# `force-tokens`
+# `force-components`
 
 > TODO: description
 
 ## Usage
 
 ```
-const forceTokens = require('force-tokens');
+const forceComponents = require('force-components');
 
 // TODO: DEMONSTRATE API
 ```

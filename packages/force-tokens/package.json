@@ -1,11 +1,13 @@
 {
   "name": "force-tokens",
   "version": "0.0.1",
-  "description": "Force Design Tokens",
+  "description": "Force Design System Tokens",
   "author": "André Pesci Cazetto <cazetto.andre@gmail.com>",
   "homepage": "https://github.com/cazetto/force#readme",
   "license": "ISC",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
   "directories": {
     "src": "src"
   },
@@ -16,11 +18,37 @@
     "type": "git",
     "url": "git+https://github.com/cazetto/force.git"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -cw",
+    "lint": "standard",
+    "format": "prettier-standard --format"
+  },
   "bugs": {
     "url": "https://github.com/cazetto/force/issues"
   },
-  "dependencies": {
-    "force-components": "^0.0.1"
+  "devDependencies": {
+    "rollup": "^2.0.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.2",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "standard": "^14.3.1",
+    "standard-prettier": "^1.0.1",
+    "typescript": "^3.8.3"
+  },
+  "standard": {
+    "ignore": [
+      "node_modules/",
+      "dist/"
+    ],
+    "globals": [
+      "describe",
+      "it",
+      "test",
+      "expect",
+      "afterAll",
+      "jest"
+    ]
   }
 }

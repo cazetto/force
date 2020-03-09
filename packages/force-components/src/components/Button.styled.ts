@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import tokens from 'force-tokens';
 
 export const ButtonStyled = styled.button`
-  color: white;
+  color: ${tokens.pallete.blue};
   background-color: black;
   border: none;
   padding: 12px 34px;
