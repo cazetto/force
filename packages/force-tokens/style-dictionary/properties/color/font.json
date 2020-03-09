@@ -1,0 +1,9 @@
+{
+  "color": {
+    "font": {
+      "base": { "value": "{color.pallete.red.default}" },
+      "secondary": { "value": "{color.pallete.green.default}" },
+      "tertiary": { "value": "{color.pallete.gray.200}" }
+    }
+  }
+}

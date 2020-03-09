@@ -1,0 +1,32 @@
+{
+  "source": [
+    "style-dictionary/properties/color/*.json",
+    "style-dictionary/properties/size/*.json"
+  ],
+  "platforms": {
+    "js": {
+      "transformGroup": "js",
+      "buildPath": "src/",
+      "files": [
+        {
+          "destination": "colors.js",
+          "format": "javascript/es6",
+          "filter": {
+            "attributes": {
+              "category": "color"
+            }
+          }
+        },
+        {
+          "destination": "sizes.js",
+          "format": "javascript/es6",
+          "filter": {
+            "attributes": {
+              "category": "size"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -19,8 +19,9 @@
     "url": "git+https://github.com/cazetto/force.git"
   },
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -cw",
+    "build-dictionary": "style-dictionary build --config ./style-dictionary/config.json",
+    "build": "npm run build-dictionary && rollup -c",
+    "dev": "npm run build-dictionary && rollup -cw",
     "lint": "standard",
     "format": "prettier-standard --format"
   },
@@ -35,6 +36,7 @@
     "rollup-plugin-typescript2": "^0.26.0",
     "standard": "^14.3.1",
     "standard-prettier": "^1.0.1",
+    "style-dictionary": "^2.8.3",
     "typescript": "^3.8.3"
   },
   "standard": {
@@ -50,5 +52,8 @@
       "afterAll",
       "jest"
     ]
+  },
+  "dependencies": {
+    "rollup-plugin-execute": "^1.1.1"
   }
 }
