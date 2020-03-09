@@ -1,9 +1,9 @@
 {
-  "source": ["properties/color/*.json", "properties/size/*.json"],
+  "source": ["src/properties/color/*.json", "src/properties/size/*.json"],
   "platforms": {
     "js": {
       "transformGroup": "js",
-      "buildPath": "src/generated/",
+      "buildPath": "src/__generated__/",
       "files": [
         {
           "destination": "colors.js",
