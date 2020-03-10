@@ -5,6 +5,8 @@
     "packages/*"
   ],
   "scripts": {
+    "/** MONOREPO SCRIPTS */": "",
+    "bootstrap": "lerna bootstrap",
     "/** DEV SCRIPTS */": "",
     "dev:docs": "lerna run --scope force-docs dev",
     "dev:site": "lerna run --scope force-site dev",
@@ -14,6 +16,7 @@
     "build:docs": "lerna run --scope force-docs build",
     "build:site": "lerna run --scope force-site build",
     "build:components": "lerna run --scope force-components build",
+    "build:tokens": "lerna run --scope force-tokens build",
     "build:all": "lerna run build --stream",
     "/** TEST SCRIPTS */": "",
     "test:site": "lerna run --scope force-site test --since master",

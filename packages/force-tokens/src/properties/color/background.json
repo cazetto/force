@@ -1,0 +1,11 @@
+{
+  "color": {
+    "background": {
+      "primary": { "value": "{color.gray.900.value}" },
+      "secondary": { "value": "{color.gray._.value}" },
+      "tertiary": { "value": "{color.gray.300.value}" },
+      "danger": { "value": "{color.red.300.value}" },
+      "warning": { "value": "{color.yellow.300.value}" }
+    }
+  }
+}
