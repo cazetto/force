@@ -1,0 +1,11 @@
+{
+  "color": {
+    "text": {
+      "primary": { "value": "{color.blue._.value}" },
+      "secondary": { "value": "{color.purple._.value}" },
+      "tertiary": { "value": "{color.pink._.value}" },
+      "danger": { "value": "{color.red._.value}" },
+      "warning": { "value": "{color.yellow._.value}" }
+    }
+  }
+}
