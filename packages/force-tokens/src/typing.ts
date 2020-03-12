@@ -1,114 +1,163 @@
 export interface Tokens {
-  // Color Gray
-  ColorGray: string;
-  ColorGray000: string;
-  ColorGray100: string;
-  ColorGray200: string;
-  ColorGray300: string;
-  ColorGray400: string;
-  ColorGray500: string;
-  ColorGray600: string;
-  ColorGray700: string;
-  ColorGray800: string;
-  ColorGray900: string;
-  // Color Blue
-  ColorBlue: string;
-  ColorBlue000: string;
-  ColorBlue100: string;
-  ColorBlue200: string;
-  ColorBlue300: string;
-  ColorBlue400: string;
-  ColorBlue500: string;
-  ColorBlue600: string;
-  ColorBlue700: string;
-  ColorBlue800: string;
-  ColorBlue900: string;
-  // Color Green
-  ColorGreen: string;
-  ColorGreen000: string;
-  ColorGreen100: string;
-  ColorGreen200: string;
-  ColorGreen300: string;
-  ColorGreen400: string;
-  ColorGreen500: string;
-  ColorGreen600: string;
-  ColorGreen700: string;
-  ColorGreen800: string;
-  ColorGreen900: string;
-  // Color Yellow
-  ColorYellow: string;
-  ColorYellow000: string;
-  ColorYellow100: string;
-  ColorYellow200: string;
-  ColorYellow300: string;
-  ColorYellow400: string;
-  ColorYellow500: string;
-  ColorYellow600: string;
-  ColorYellow700: string;
-  ColorYellow800: string;
-  ColorYellow900: string;
-  // Color Orange
-  ColorOrange: string;
-  ColorOrange000: string;
-  ColorOrange100: string;
-  ColorOrange200: string;
-  ColorOrange300: string;
-  ColorOrange400: string;
-  ColorOrange500: string;
-  ColorOrange600: string;
-  ColorOrange700: string;
-  ColorOrange800: string;
-  ColorOrange900: string;
-  // Color Red
-  ColorRed: string;
-  ColorRed000: string;
-  ColorRed100: string;
-  ColorRed200: string;
-  ColorRed300: string;
-  ColorRed400: string;
-  ColorRed500: string;
-  ColorRed600: string;
-  ColorRed700: string;
-  ColorRed800: string;
-  ColorRed900: string;
-  // Color Purple
-  ColorPurple: string;
-  ColorPurple000: string;
-  ColorPurple100: string;
-  ColorPurple200: string;
-  ColorPurple300: string;
-  ColorPurple400: string;
-  ColorPurple500: string;
-  ColorPurple600: string;
-  ColorPurple700: string;
-  ColorPurple800: string;
-  ColorPurple900: string;
-  // Color Pink
-  ColorPink: string;
-  ColorPink000: string;
-  ColorPink100: string;
-  ColorPink200: string;
-  ColorPink300: string;
-  ColorPink400: string;
-  ColorPink500: string;
-  ColorPink600: string;
-  ColorPink700: string;
-  ColorPink800: string;
-  ColorPink900: string;
-  // Color Font
-  ColorTextPrimary: string;
-  ColorTextSecondary: string;
-  ColorTextTertiary: string;
-  ColorTextDanger: string;
-  ColorTextWarning: string;
-  //
-  ColorBackgroundPrimary: string;
-  ColorBackgroundSecondary: string;
-  ColorBackgroundTertiary: string;
-  ColorBackgroundDanger: string;
-  ColorBackgroundWarning: string;
-  // Size Font
-  SizeFontMedium: string;
-  SizeFontLarge: string;
-  SizeFontBase: string;
+  // COLOR PALLETE
+  colorGray: string;
+  colorGray000: string;
+  colorGray100: string;
+  colorGray200: string;
+  colorGray300: string;
+  colorGray400: string;
+  colorGray500: string;
+  colorGray600: string;
+  colorGray700: string;
+  colorGray800: string;
+  colorGray900: string;
+  colorBlue: string;
+  colorBlue000: string;
+  colorBlue100: string;
+  colorBlue200: string;
+  colorBlue300: string;
+  colorBlue400: string;
+  colorBlue500: string;
+  colorBlue600: string;
+  colorBlue700: string;
+  colorBlue800: string;
+  colorBlue900: string;
+  colorGreen: string;
+  colorGreen000: string;
+  colorGreen100: string;
+  colorGreen200: string;
+  colorGreen300: string;
+  colorGreen400: string;
+  colorGreen500: string;
+  colorGreen600: string;
+  colorGreen700: string;
+  colorGreen800: string;
+  colorGreen900: string;
+  colorYellow: string;
+  colorYellow000: string;
+  colorYellow100: string;
+  colorYellow200: string;
+  colorYellow300: string;
+  colorYellow400: string;
+  colorYellow500: string;
+  colorYellow600: string;
+  colorYellow700: string;
+  colorYellow800: string;
+  colorYellow900: string;
+  colorOrange: string;
+  colorOrange000: string;
+  colorOrange100: string;
+  colorOrange200: string;
+  colorOrange300: string;
+  colorOrange400: string;
+  colorOrange500: string;
+  colorOrange600: string;
+  colorOrange700: string;
+  colorOrange800: string;
+  colorOrange900: string;
+  colorRed: string;
+  colorRed000: string;
+  colorRed100: string;
+  colorRed200: string;
+  colorRed300: string;
+  colorRed400: string;
+  colorRed500: string;
+  colorRed600: string;
+  colorRed700: string;
+  colorRed800: string;
+  colorRed900: string;
+  colorPurple: string;
+  colorPurple000: string;
+  colorPurple100: string;
+  colorPurple200: string;
+  colorPurple300: string;
+  colorPurple400: string;
+  colorPurple500: string;
+  colorPurple600: string;
+  colorPurple700: string;
+  colorPurple800: string;
+  colorPurple900: string;
+  colorPink: string;
+  colorPink000: string;
+  colorPink100: string;
+  colorPink200: string;
+  colorPink300: string;
+  colorPink400: string;
+  colorPink500: string;
+  colorPink600: string;
+  colorPink700: string;
+  colorPink800: string;
+  colorPink900: string;
+  // SCOPED COLORS
+  // Text Colors
+  colorTextPrimary: string;
+  colorTextSecondary: string;
+  colorTextTertiary: string;
+  colorTextDanger: string;
+  colorTextWarning: string;
+  // Background Button Colors
+  colorButtonHuePrimary: string;
+  colorButtonHueSecondary: string;
+  colorButtonHueTertiary: string;
+  colorButtonHueDanger: string;
+  colorButtonHueWarning: string;
+  colorButtonHueDisabled: string;
+  // Font Button Colors
+  colorButtonContrastPrimary: string;
+  colorButtonContrastSecondary: string;
+  colorButtonContrastTertiary: string;
+  colorButtonContrastWarning: string;
+  colorButtonContrastDanger: string;
+  colorButtonContrastDisabled: string;
+  // Focused Shadow Button Colors
+  colorButtonFocusedShadowPrimary: string;
+  colorButtonFocusedShadowSecondary: string;
+  colorButtonFocusedShadowTertiary: string;
+  colorButtonFocusedShadowDanger: string;
+  colorButtonFocusedShadowWarning: string;
+  // SCOPED SIZES
+  // Font Sizes
+  sizeFontSmall: string;
+  sizeFontMedium: string;
+  sizeFontLarge: string;
+  sizeFontBase: string;
+  // Button Font Sizes
+  sizeButtonFontXs: string;
+  sizeButtonFontSm: string;
+  sizeButtonFontMd: string;
+  sizeButtonFontLg: string;
+  sizeButtonFontXl: string;
+  // Button Font Sizes
+  sizeButtonBorderWidthXs: string;
+  sizeButtonBorderWidthSm: string;
+  sizeButtonBorderWidthMd: string;
+  sizeButtonBorderWidthLg: string;
+  sizeButtonBorderWidthXl: string;
+  // Button Padding Sizes
+  sizeButtonPaddingVerticalXs: string;
+  sizeButtonPaddingVerticalSm: string;
+  sizeButtonPaddingVerticalMd: string;
+  sizeButtonPaddingVerticalLg: string;
+  sizeButtonPaddingVerticalXl: string;
+  sizeButtonPaddingHorizontalXs: string;
+  sizeButtonPaddingHorizontalSm: string;
+  sizeButtonPaddingHorizontalMd: string;
+  sizeButtonPaddingHorizontalLg: string;
+  sizeButtonPaddingHorizontalXl: string;
+  // Button Focused Shadow Sizes
+  sizeButtonFocusedShadowXs: string;
+  sizeButtonFocusedShadowSm: string;
+  sizeButtonFocusedShadowMd: string;
+  sizeButtonFocusedShadowLg: string;
+  sizeButtonFocusedShadowXl: string;
+  // Size Spacing (margin, padding)
+  sizeSpacing0: string;
+  sizeSpacing1: string;
+  sizeSpacing2: string;
+  sizeSpacing3: string;
+  sizeSpacing4: string;
+  sizeSpacing5: string;
+  sizeSpacing6: string;
+  sizeSpacing7: string;
+  sizeSpacing8: string;
 }

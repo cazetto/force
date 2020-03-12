@@ -3,6 +3,7 @@
   "platforms": {
     "js": {
       "transformGroup": "js",
+      "transforms": ["attribute/cti", "name/cti/camel", "size/px"],
       "buildPath": "src/__generated__/",
       "files": [
         {

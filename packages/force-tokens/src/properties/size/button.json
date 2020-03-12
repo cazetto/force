@@ -1,0 +1,93 @@
+{
+  "size": {
+    "button": {
+      "font": {
+        "xs": {
+          "value": "10"
+        },
+        "sm": {
+          "value": "11"
+        },
+        "md": {
+          "value": "13"
+        },
+        "lg": {
+          "value": "15"
+        },
+        "xl": {
+          "value": "18"
+        }
+      },
+      "focusedShadow": {
+        "xs": {
+          "value": "2"
+        },
+        "sm": {
+          "value": "2"
+        },
+        "md": {
+          "value": "3"
+        },
+        "lg": {
+          "value": "3"
+        },
+        "xl": {
+          "value": "4"
+        }
+      },
+      "borderWidth": {
+        "xs": {
+          "value": "1"
+        },
+        "sm": {
+          "value": "1.5"
+        },
+        "md": {
+          "value": "2"
+        },
+        "lg": {
+          "value": "2.5"
+        },
+        "xl": {
+          "value": "3"
+        }
+      },
+      "padding": {
+        "vertical": {
+          "xs": {
+            "value": "10px"
+          },
+          "sm": {
+            "value": "11px"
+          },
+          "md": {
+            "value": "13px"
+          },
+          "lg": {
+            "value": "16px"
+          },
+          "xl": {
+            "value": "18px"
+          }
+        },
+        "horizontal": {
+          "xs": {
+            "value": "30px"
+          },
+          "sm": {
+            "value": "33px"
+          },
+          "md": {
+            "value": "39px"
+          },
+          "lg": {
+            "value": "48px"
+          },
+          "xl": {
+            "value": "54px"
+          }
+        }
+      }
+    }
+  }
+}

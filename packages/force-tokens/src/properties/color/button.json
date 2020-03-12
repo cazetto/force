@@ -1,0 +1,29 @@
+{
+  "color": {
+    "button": {
+      "hue": {
+        "primary": { "value": "{color.blue._.value}" },
+        "secondary": { "value": "{color.green._.value}" },
+        "tertiary": { "value": "{color.purple._.value}" },
+        "danger": { "value": "{color.red._.value}" },
+        "warning": { "value": "{color.yellow._.value}" },
+        "disabled": { "value": "{color.gray.400.value}" }
+      },
+      "focusedShadow": {
+        "primary": { "value": "{color.blue._.value}80" },
+        "secondary": { "value": "{color.green._.value}80" },
+        "tertiary": { "value": "{color.purple._.value}80" },
+        "danger": { "value": "{color.red._.value}80" },
+        "warning": { "value": "{color.yellow._.value}80" }
+      },
+      "contrast": {
+        "primary": { "value": "{color.white._.value}" },
+        "secondary": { "value": "{color.white._.value}" },
+        "tertiary": { "value": "{color.white._.value}" },
+        "danger": { "value": "{color.white._.value}" },
+        "warning": { "value": "{color.white._.value}" },
+        "disabled": { "value": "{color.white._.value}" }
+      }
+    }
+  }
+}

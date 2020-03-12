@@ -35,6 +35,7 @@
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/styled-components": "^5.0.1",
+    "@types/styled-system": "^5.1.9",
     "jest": "^25.1.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -46,6 +47,7 @@
     "standard": "^14.3.1",
     "standard-prettier": "^1.0.1",
     "styled-components": "^5.0.1",
+    "styled-system": "^5.1.5",
     "ts-jest": "^25.2.1",
     "typescript": "^3.8.3"
   },
