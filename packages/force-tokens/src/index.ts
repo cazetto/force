@@ -10,4 +10,4 @@ const tokens: Tokens = {
   ...sizeVariables
 };
 
-export default { ...tokens };
+export default tokens;
