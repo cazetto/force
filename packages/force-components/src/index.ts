@@ -1,3 +1,4 @@
+import themePrimer from './themes/primer';
 import Button from './components/Button';
 
-export { Button };
+export { themePrimer, Button };

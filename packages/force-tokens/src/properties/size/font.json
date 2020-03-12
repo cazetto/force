@@ -2,13 +2,13 @@
   "size": {
     "font": {
       "small": {
-        "value": "0.75"
+        "value": "11"
       },
       "medium": {
-        "value": "1"
+        "value": "14"
       },
       "large": {
-        "value": "2"
+        "value": "16"
       },
       "base": {
         "value": "{size.font.medium.value}"
