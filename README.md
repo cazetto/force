@@ -2,7 +2,7 @@
 
 ## Contribute
 
-## Run development mode
+### Run development mode
 
 `git clone https://github.com/cazetto/force.git`
 
@@ -27,11 +27,11 @@ if you need to change some design token run to compile jsons:
 `yarn build:tokens`
 
 
-## Run tests
+### Run tests
 
 `yarn test:all`
 
-## Build
+### Build
 
 `yarn build:all`
 
