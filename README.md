@@ -2,8 +2,6 @@
 
 ## Usage
 
-`yarn add force-components`
-
 `yarn add styled-components styled-system force-components -D`
 
 ### Example
