@@ -23,7 +23,8 @@
     "dev": "rollup -cw",
     "lint": "standard",
     "format": "prettier-standard --format",
-    "test": "jest --coverage"
+    "test": "jest --coverage --watch",
+    "test:updateSnapshot": "jest --updateSnapshot"
   },
   "bugs": {
     "url": "https://github.com/cazetto/force/issues"
