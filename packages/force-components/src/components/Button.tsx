@@ -93,17 +93,25 @@ export const ButtonStyled = styled.button.attrs(
     outline,
     variant = 'primary',
     size = 'md'
-  }: ButtonProps) => ({
-    colorHue: theme?.button.colors.hue[(disabled && 'disabled') || variant],
-    colorContrast:
-      theme?.button.colors.contrast[(disabled && 'disabled') || variant],
-    colorFocusedShadow: theme?.button.colors.focusedShadow[variant],
-    sizePadding: theme?.button.sizes.padding[size],
-    sizeFont: theme?.button.sizes.font[size],
-    sizeFocusedShadow: theme?.button.sizes.focusedShadow[size],
-    borderWidth: theme?.button.sizes.borderWidth[size],
-    outline
-  })
+  }: ButtonProps) => {
+    if (!theme?.button) {
+      throw new Error(
+        'Button: Force components need to be inside ThemeProvider in the component tree.'
+      );
+    }
+
+    return {
+      colorHue: theme?.button.colors.hue[(disabled && 'disabled') || variant],
+      colorContrast:
+        theme?.button.colors.contrast[(disabled && 'disabled') || variant],
+      colorFocusedShadow: theme?.button.colors.focusedShadow[variant],
+      sizePadding: theme?.button.sizes.padding[size],
+      sizeFont: theme?.button.sizes.font[size],
+      sizeFocusedShadow: theme?.button.sizes.focusedShadow[size],
+      borderWidth: theme?.button.sizes.borderWidth[size],
+      outline
+    };
+  }
 )`
   ${props => getCommonCss(props)};
   ${props => (props.outline ? getOutlineCss(props) : getFilledCss(props))};
