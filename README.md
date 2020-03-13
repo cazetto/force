@@ -1,12 +1,47 @@
 # Force Design System
 
-## Commit message convention
+## Contribute
+
+## Run development mode
+
+`git clone https://github.com/cazetto/force.git`
+
+`cd force`
+
+`yarn`
+
+To run all packages simultaneously:
+
+`yarn dev:all`
+
+To run only the components package:
+
+`yarn dev:components`
+
+and maybe you need to see de components at browser running:
+
+`yarn dev:docs`
+
+if you need to change some design token run to compile jsons:
+
+`yarn build:tokens`
+
+
+## Run tests
+
+`yarn test:all`
+
+## Build
+
+`yarn build:all`
+
+### Commit message convention
 
 1. Use the English language
 2. Use Conventional Commits pattern for commit messages, it is specified in the url bellow.
    `https://www.conventionalcommits.org/`
 
-## Branch name convention
+### Branch name convention
 
 Use:
 
@@ -18,7 +53,7 @@ Use:
 
   eg. `bug/123-fix-something`
 
-## Issue name convention
+### Issue name convention
 
 Use:
 
