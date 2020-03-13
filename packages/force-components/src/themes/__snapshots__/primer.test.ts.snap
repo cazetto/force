@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Primer Theme need to match snapshot 1`] = `
+Object {
+  "button": Object {
+    "colors": Object {
+      "contrast": Object {
+        "danger": "rgb(255, 255, 255)",
+        "disabled": "rgb(255, 255, 255)",
+        "primary": "rgb(255, 255, 255)",
+        "secondary": "rgb(255, 255, 255)",
+        "tertiary": "rgb(255, 255, 255)",
+        "warning": "rgb(255, 255, 255)",
+      },
+      "focusedShadow": Object {
+        "danger": "#d73a4980",
+        "primary": "#0366d680",
+        "secondary": "#28a74580",
+        "tertiary": "#6f42c180",
+        "warning": "#ffd33d80",
+      },
+      "hue": Object {
+        "danger": "#d73a49",
+        "disabled": "#959da5",
+        "primary": "#0366d6",
+        "secondary": "#28a745",
+        "tertiary": "#6f42c1",
+        "warning": "#ffd33d",
+      },
+    },
+    "sizes": Object {
+      "borderWidth": Object {
+        "lg": "2.5px",
+        "md": "2px",
+        "sm": "1.5px",
+        "xl": "3px",
+        "xs": "1px",
+      },
+      "focusedShadow": Object {
+        "lg": "3px",
+        "md": "3px",
+        "sm": "2px",
+        "xl": "4px",
+        "xs": "2px",
+      },
+      "font": Object {
+        "lg": "15px",
+        "md": "13px",
+        "sm": "11px",
+        "xl": "18px",
+        "xs": "10px",
+      },
+      "padding": Object {
+        "lg": "16px 48px",
+        "md": "13px 39px",
+        "sm": "11px 33px",
+        "xl": "18px 54px",
+        "xs": "10px 30px",
+      },
+    },
+  },
+  "spaces": Array [
+    "0px",
+    "4px",
+    "8px",
+    "16px",
+    "32px",
+    "64px",
+    "128px",
+    "256px",
+    "512px",
+  ],
+}
+`;
