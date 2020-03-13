@@ -4,7 +4,7 @@
 
 `yarn add styled-components styled-system force-components -D`
 
-### Example
+### Button Example
 ```javascript
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
