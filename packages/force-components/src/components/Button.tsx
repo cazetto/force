@@ -1,11 +1,7 @@
 import React, { forwardRef, FC, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { space, layout, color } from 'styled-system';
-import { Theme } from '../themes/typing';
-import { Size, Space, Variant } from './typing';
-interface ComponentBaseProps {
-  theme?: Theme;
-}
+import { ComponentBaseProps, Size, Space, Variant } from './typing';
 
 type ButtonTypes = 'button' | 'submit' | 'reset';
 
@@ -56,7 +52,7 @@ const getCommonCss = ({
     border: none;
     box-sizing: border-box;
     user-select: none;
-
+    font-family: inherit;
     font-size: ${() => sizeFont};
     padding: ${() => sizePadding};
     cursor: ${() => (disabled ? 'not-allowed' : 'pointer')};
