@@ -93,6 +93,7 @@ export interface Tokens {
   colorTextPrimary: string;
   colorTextSecondary: string;
   colorTextTertiary: string;
+  colorTextInfo: string;
   colorTextDanger: string;
   colorTextWarning: string;
   // Background Button Colors
@@ -117,10 +118,21 @@ export interface Tokens {
   colorButtonFocusedShadowWarning: string;
   // SCOPED SIZES
   // Font Sizes
-  sizeFontSmall: string;
-  sizeFontMedium: string;
-  sizeFontLarge: string;
-  sizeFontBase: string;
+  sizeTextXs: string;
+  sizeTextSm: string;
+  sizeTextMd: string;
+  sizeTextLg: string;
+  sizeTextXl: string;
+  // Font Weight
+  sizeFontWeight100: string;
+  sizeFontWeight200: string;
+  sizeFontWeight300: string;
+  sizeFontWeight400: string;
+  sizeFontWeight500: string;
+  sizeFontWeight600: string;
+  sizeFontWeight700: string;
+  sizeFontWeight800: string;
+  sizeFontWeight900: string;
   // Button Font Sizes
   sizeButtonFontXs: string;
   sizeButtonFontSm: string;
