@@ -1,11 +1,12 @@
 {
   "color": {
     "text": {
-      "primary": { "value": "{color.blue._.value}" },
-      "secondary": { "value": "{color.purple._.value}" },
-      "tertiary": { "value": "{color.pink._.value}" },
-      "danger": { "value": "{color.red._.value}" },
-      "warning": { "value": "{color.yellow._.value}" }
+      "primary": { "value": "{color.blue.900.value}" },
+      "secondary": { "value": "{color.green.600.value}" },
+      "tertiary": { "value": "{color.purple.700.value}" },
+      "info": { "value": "{color.blue.600.value}" },
+      "warning": { "value": "{color.yellow.600.value}" },
+      "danger": { "value": "{color.red.600.value}" }
     }
   }
 }
