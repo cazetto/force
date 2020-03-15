@@ -7,6 +7,8 @@ import {
   Text
 } from 'force-components';
 function App() {
+  console.log(Button, Text);
+
   return (
     <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
       {getTexts()}
