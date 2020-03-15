@@ -24,7 +24,8 @@
     "lint": "standard",
     "format": "prettier-standard --format",
     "test": "jest --coverage --watch",
-    "test:updateSnapshot": "jest --updateSnapshot"
+    "test:updateSnapshot": "jest --updateSnapshot",
+    "doc": "typedoc --options typedoc.json"
   },
   "bugs": {
     "url": "https://github.com/cazetto/force/issues"

@@ -25,7 +25,7 @@
     "url": "https://github.com/cazetto/force/issues"
   },
   "dependencies": {
-    "force-components": "^0.0.1",
+    "force-components": "^0.0.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
