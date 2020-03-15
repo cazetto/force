@@ -21,7 +21,9 @@
     "/** TEST SCRIPTS */": "",
     "test:site": "lerna run --scope force-site test --since master",
     "test:components": "lerna run --scope force-components test --since master",
-    "test:all": "lerna run test --parallel --since master"
+    "test:all": "lerna run test --parallel --since master",
+    "/** DOC SCRIPTS */": "",
+    "doc:components": "lerna run --scope force-components doc"
   },
   "devDependencies": {
     "lerna": "^3.20.2"
