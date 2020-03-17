@@ -1,6 +1,6 @@
 {
   "name": "force-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Force Design System components",
   "author": "André Pesci Cazetto <cazetto.andre@gmail.com>",
   "homepage": "https://github.com/cazetto/force#readme",
@@ -80,6 +80,6 @@
     "react-dom": "^16.13.0"
   },
   "dependencies": {
-    "force-tokens": "^0.0.1"
+    "force-tokens": "^0.0.3"
   }
 }
