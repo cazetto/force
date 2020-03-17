@@ -25,8 +25,9 @@ function App() {
         <Text
           as="div"
           color="colorBlue400"
-          fontSize={{ xs: '36px', sm: '48px', md: '56px' }}
+          fontSize={{ xs: '28px', sm: '48px', md: '56px' }}
           fontWeight="700"
+          textAlign="center"
           mb="4"
         >
           🛸 Force Design System 🛸
