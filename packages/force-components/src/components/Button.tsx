@@ -5,8 +5,14 @@ import { ComponentBaseProps, Size, Space, Variant } from './typing';
 
 type ButtonTypes = 'button' | 'submit' | 'reset';
 
+type Element = 'a' | 'button';
+
 interface ButtonProps extends ComponentBaseProps {
   children?: ReactNode;
+  as?: Element;
+  href?: string;
+  alt?: string;
+  target?: '_blank' | '_parent' | '_self' | '_top';
   type?: ButtonTypes;
   autoFocus?: boolean;
   name?: string;
@@ -74,11 +80,11 @@ const getFilledCss = ({ colorHue, colorContrast, borderWidth }: any) => {
   `;
 };
 
-const getOutlineCss = ({ colorHue, colorContrast, borderWidth }: any) => {
+const getOutlineCss = ({ colorHue, borderWidth }: any) => {
   return css`
     color: ${colorHue};
     border: ${borderWidth} solid ${colorHue};
-    background-color: ${colorContrast};
+    background-color: transparent;
   `;
 };
 

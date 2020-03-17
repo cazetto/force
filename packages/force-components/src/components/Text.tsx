@@ -7,7 +7,10 @@ import {
   Space,
   Variant,
   Color,
-  FontWeight
+  FontWeight,
+  ResponsiveSize,
+  TextAlign,
+  LineHeight
 } from './typing';
 
 type ElementType = 'p' | 'span' | 'div';
@@ -17,19 +20,25 @@ interface TextProps extends ComponentBaseProps {
   children?: ReactNode;
   variant?: Variant;
   color?: Color;
-  fontSize?: Size;
+  fontSize?: Size | ResponsiveSize;
   fontWeight?: FontWeight;
+  lineHeight?: LineHeight;
+  textAlign?: TextAlign;
   ariaLabel?: string;
   m?: Space;
   mt?: Space;
   mr?: Space;
   mb?: Space;
   ml?: Space;
+  mx?: Space;
+  my?: Space;
   p?: Space;
   pt?: Space;
   pr?: Space;
   pb?: Space;
   pl?: Space;
+  px?: Space;
+  py?: Space;
 }
 
 const Text: FC<TextProps> = ({ children, ariaLabel, ...rest }) => {
