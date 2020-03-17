@@ -40,5 +40,11 @@ export default {
       }
     })
   ],
-  external: ['react', 'react-dom', 'styled-components', 'styled-system']
+  external: [
+    'react',
+    'react-dom',
+    'styled-components',
+    'styled-system',
+    'styled-normalize'
+  ]
 };

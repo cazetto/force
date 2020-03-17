@@ -1,14 +1,14 @@
-export type Spaces = [
-  string,
-  string,
-  string,
-  string,
-  string,
-  string,
-  string,
-  string,
-  string
-];
+export type Spaces = {
+  0: string;
+  1: string;
+  2: string;
+  3: string;
+  4: string;
+  5: string;
+  6: string;
+  7: string;
+  8: string;
+};
 
 export type Variants = {
   primary: string;
@@ -43,7 +43,8 @@ export type FontWeights = {
 
 export interface Theme {
   colors: {};
-  spaces: Spaces;
+  breakpoints: Sizes;
+  space: Spaces;
   fontSizes: FontSizes;
   fontWeights: FontWeights;
   button: {
