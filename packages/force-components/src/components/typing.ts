@@ -1,13 +1,31 @@
-/**
- * Components prop typing
- */
 import { Theme } from '../themes/typing';
 export interface ComponentBaseProps {
   theme?: Theme;
 }
-export type Space = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
+export type Space = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
+export type ResponsiveSpace = {
+  sm?: Space;
+  xs?: Space;
+  md?: Space;
+  lg?: Space;
+  xl?: Space;
+};
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-export type FontSize = Size;
+export type ResponsiveSize = {
+  sm?: Size;
+  xs?: Size;
+  md?: Size;
+  lg?: Size;
+  xl?: Size;
+};
+export type Dimention = number | string;
+export type ResponsiveDimention = {
+  sm?: Dimention;
+  xs?: Dimention;
+  md?: Dimention;
+  lg?: Dimention;
+  xl?: Dimention;
+};
 export type FontWeight =
   | '100'
   | '200'
@@ -18,6 +36,227 @@ export type FontWeight =
   | '700'
   | '800'
   | '900';
+export type Globals = 'inherit' | 'initial' | 'unset';
+export type TextAlign =
+  | Globals
+  | 'center'
+  | 'end'
+  | 'justify'
+  | 'left'
+  | 'right'
+  | string;
+
+export type LineHeight = 'normal' | number | string;
+export type LetterSpacing = 'normal' | string;
+export type FontStyle = Globals | 'normal' | 'italic' | 'oblique' | string;
+export type VerticalAlign =
+  | Globals
+  | 'revert'
+  | 'baseline'
+  | 'bottom'
+  | 'middle'
+  | 'sub'
+  | 'super'
+  | 'text-bottom'
+  | 'text-top'
+  | 'top'
+  | string;
+export type Display =
+  | Globals
+  | 'revert'
+  | 'block'
+  | 'inline'
+  | 'run-in'
+  | 'flex'
+  | 'flow'
+  | 'flow-root'
+  | 'grid'
+  | 'table'
+  | 'table-caption'
+  | 'table-cell'
+  | 'table-column'
+  | 'table-column-group'
+  | 'table-footer-group'
+  | 'table-header-group'
+  | 'table-row'
+  | 'table-row-group'
+  | 'inline-block'
+  | 'inline-flex'
+  | 'inline-grid'
+  | 'inline-list-item'
+  | 'inline-table'
+  | 'contents'
+  | 'list-item'
+  | 'none'
+  | string;
+export type Overflow =
+  | Globals
+  | 'visible'
+  | 'hidden'
+  | 'clip'
+  | 'scroll'
+  | 'auto'
+  | 'hidden visible'
+  | string;
+export type AlignItems =
+  | Globals
+  | 'normal'
+  | 'stretch'
+  | 'center'
+  | 'start'
+  | 'end'
+  | 'flex-start'
+  | 'flex-end'
+  | 'baseline'
+  | 'first baseline'
+  | 'last baseline'
+  | 'safe center'
+  | 'unsafe center'
+  | string;
+export type AlignContent =
+  | Globals
+  | 'center'
+  | 'start'
+  | 'end'
+  | 'flex-start'
+  | 'flex-end'
+  | 'normal'
+  | 'baseline'
+  | 'first baseline'
+  | 'last baseline'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+  | 'stretch'
+  | 'safe center'
+  | 'unsafe center'
+  | string;
+export type JustifyItems =
+  | Globals
+  | 'auto'
+  | 'normal'
+  | 'stretch'
+  | 'center'
+  | 'start'
+  | 'end'
+  | 'flex-start'
+  | 'flex-end'
+  | 'self-start'
+  | 'self-end'
+  | 'left'
+  | 'right'
+  | 'baseline'
+  | 'first baseline'
+  | 'last baseline'
+  | 'safe center'
+  | 'unsafe center'
+  | 'legacy right'
+  | 'legacy left'
+  | 'legacy center'
+  | string;
+export type JustifyContent =
+  | Globals
+  | 'center'
+  | 'start'
+  | 'end'
+  | 'flex-start'
+  | 'flex-end'
+  | 'left'
+  | 'right'
+  | 'normal'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+  | 'stretch'
+  | 'safe center'
+  | 'unsafe center'
+  | string;
+export type FlexWrap = Globals | 'nowrap' | 'wrap' | 'wrap-reverse';
+export type FlexDirection =
+  | Globals
+  | 'row'
+  | 'row-reverse'
+  | 'column'
+  | 'column-reverse';
+export type Flex = Globals | 'auto' | 'none' | number | string;
+export type FlexGrow = Globals | number;
+export type FlexShrink = Globals | number;
+export type FlexBasis =
+  | Globals
+  | 'auto'
+  | 'fill'
+  | 'max-content'
+  | 'min-content'
+  | 'fit-content'
+  | 'content'
+  | string;
+export type JustifySelf =
+  | Globals
+  | 'auto'
+  | 'normal'
+  | 'stretch'
+  | 'center'
+  | 'start'
+  | 'end'
+  | 'flex-start'
+  | 'flex-end'
+  | 'self-start'
+  | 'self-end'
+  | 'left'
+  | 'right'
+  | 'baseline'
+  | 'first baseline'
+  | 'last baseline'
+  | 'safe center'
+  | 'unsafe center'
+  | string;
+export type AlignSelf =
+  | Globals
+  | 'auto'
+  | 'normal'
+  | 'center'
+  | 'start'
+  | 'end'
+  | 'self-start'
+  | 'self-end'
+  | 'flex-start'
+  | 'flex-end'
+  | 'baseline'
+  | 'first baseline'
+  | 'last baseline'
+  | 'stretch'
+  | 'safe center'
+  | 'unsafe center'
+  | string;
+export type GridGap = Globals | string;
+export type GridRowGap = Globals | string;
+export type GridColumnGap = Globals | string;
+export type GridColumn = string;
+export type GridRow = Globals | 'auto' | string;
+export type GridArea = Globals | 'auto' | string;
+export type GridAutoFlow =
+  | Globals
+  | 'row'
+  | 'column'
+  | 'dense'
+  | 'row dense'
+  | 'column dense';
+export type GridAutoRows =
+  | Globals
+  | 'min-content'
+  | 'max-content'
+  | 'auto'
+  | string;
+export type GridAutoColumns =
+  | Globals
+  | 'min-content'
+  | 'max-content'
+  | 'auto'
+  | string;
+export type GridTemplateRows = Globals | 'none' | string;
+export type GridTemplateColumns = Globals | 'none' | string;
+export type GridTemplateAreas = Globals | 'none' | string;
+export type Postion = 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky';
 export type Variant =
   | 'primary'
   | 'secondary'
@@ -25,7 +264,6 @@ export type Variant =
   | 'danger'
   | 'warning'
   | 'info';
-
 export type Color =
   | 'colorGray'
   | 'colorGray000'
@@ -115,3 +353,10 @@ export type Color =
   | 'colorPink700'
   | 'colorPink800'
   | 'colorPink900';
+export type ResponsiveColor = {
+  sm?: Color;
+  xs?: Color;
+  md?: Color;
+  lg?: Color;
+  xl?: Color;
+};

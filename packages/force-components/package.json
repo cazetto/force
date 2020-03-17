@@ -1,6 +1,6 @@
 {
   "name": "force-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Force Design System components",
   "author": "André Pesci Cazetto <cazetto.andre@gmail.com>",
   "homepage": "https://github.com/cazetto/force#readme",
@@ -49,6 +49,7 @@
     "standard": "^14.3.1",
     "standard-prettier": "^1.0.1",
     "styled-components": "^5.0.1",
+    "styled-normalize": "^8.0.7",
     "styled-system": "^5.1.5",
     "ts-jest": "^25.2.1",
     "typescript": "^3.8.3"
@@ -79,6 +80,6 @@
     "react-dom": "^16.13.0"
   },
   "dependencies": {
-    "force-tokens": "^0.0.1"
+    "force-tokens": "^0.0.3"
   }
 }
