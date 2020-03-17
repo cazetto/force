@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
+import { Normalize } from 'styled-normalize';
 import { Theme } from '../themes/typing';
 
 type ThemeProviderProps = {
@@ -15,6 +16,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
 }) => {
   return (
     <StyledComponentsThemeProvider theme={theme}>
+      <Normalize />
       {globalStyle}
       {children}
     </StyledComponentsThemeProvider>

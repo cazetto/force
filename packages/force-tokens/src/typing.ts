@@ -117,6 +117,12 @@ export interface Tokens {
   colorButtonFocusedShadowDanger: string;
   colorButtonFocusedShadowWarning: string;
   // SCOPED SIZES
+  // Breackpoint Sizes
+  sizeBreakpointXs: string;
+  sizeBreakpointSm: string;
+  sizeBreakpointMd: string;
+  sizeBreakpointLg: string;
+  sizeBreakpointXl: string;
   // Font Sizes
   sizeTextXs: string;
   sizeTextSm: string;

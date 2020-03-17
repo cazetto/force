@@ -4,18 +4,113 @@ import {
   PrimerGlobalStyle,
   ForceThemeProvider,
   Button,
-  Text
+  Text,
+  Box
 } from 'force-components';
 function App() {
-  console.log(Button, Text);
-
   return (
     <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
-      {getTexts()}
-      {getButtons()}
+      <Box
+        bg="colorBlue300"
+        display="flex"
+        flexDirection="row"
+        justifyContent="space-evenly"
+      >
+        <Box bg="colorBlue400">Left</Box>
+        <Box bg="colorBlue700">Right</Box>
+      </Box>
+
+      <Box bg="colorBlue300" display="flex" flexDirection="column">
+        <Box bg="colorBlue400">Left</Box>
+        <Box bg="colorBlue700">Right</Box>
+      </Box>
+      {/* {getBoxes()} */}
+      {/* {getTexts()} */}
+      {/* {getButtons()} */}
     </ForceThemeProvider>
   );
 }
+
+const getBoxes = () => {
+  return (
+    <>
+      <Box
+        bg="colorBlue"
+        fontWeight="900"
+        m="1"
+        opacity={0.8}
+        lineHeight={'10px'}
+        display="block"
+        overflow="visible"
+        order={1}
+        width={{ xs: 1, sm: 1 / 2, md: 1 / 4, lg: 1 / 4 }}
+        fontSize={{ xs: 'xl', sm: 'lg', md: 'md', lg: 'sm', xl: 'xs' }}
+      >
+        asd
+      </Box>
+      <Box
+        bg={{
+          sm: 'colorBlue',
+          xs: 'colorRed',
+          md: 'colorGreen',
+          lg: 'colorOrange',
+          xl: 'colorGray'
+        }}
+        color={{
+          sm: 'colorBlue800',
+          xs: 'colorRed800',
+          md: 'colorGreen800',
+          lg: 'colorOrange800',
+          xl: 'colorGray100'
+        }}
+        width={{ xs: 1, sm: 1 / 2, md: 1 / 4, lg: 1 / 4 }}
+        fontSize="sm"
+      >
+        asd
+      </Box>
+      <Box
+        bg={{
+          sm: 'colorBlue',
+          xs: 'colorRed',
+          md: 'colorGreen',
+          lg: 'colorOrange',
+          xl: 'colorGray'
+        }}
+        color={{
+          sm: 'colorBlue800',
+          xs: 'colorRed800',
+          md: 'colorGreen800',
+          lg: 'colorOrange800',
+          xl: 'colorGray100'
+        }}
+        width={{ xs: 1, sm: 1 / 2, md: 1 / 4, lg: 1 / 4 }}
+        fontSize="md"
+      >
+        asd
+      </Box>
+      <Box
+        bg={{
+          sm: 'colorBlue',
+          xs: 'colorRed',
+          md: 'colorGreen',
+          lg: 'colorOrange',
+          xl: 'colorGray'
+        }}
+        color={{
+          sm: 'colorBlue800',
+          xs: 'colorRed800',
+          md: 'colorGreen800',
+          lg: 'colorOrange800',
+          xl: 'colorGray100'
+        }}
+        width={{ xs: 1, sm: 1 / 2, md: 1 / 4, lg: 1 / 4 }}
+        fontSize="lg"
+      >
+        asd
+      </Box>
+    </>
+  );
+};
 
 const getTexts = () => {
   return (
