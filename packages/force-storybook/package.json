@@ -1,0 +1,43 @@
+{
+  "name": "force-storybook",
+  "version": "0.0.4",
+  "description": "Force Storybook",
+  "keywords": [
+    "storybook",
+    "docs",
+    "react",
+    "force",
+    "design",
+    "design",
+    "system"
+  ],
+  "author": "André Pesci Cazetto <cazetto.andre@gmail.com>",
+  "homepage": "https://forcesite.netlify.com/",
+  "license": "MIT",
+  "main": "lib/force-storybook.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cazetto/force.git"
+  },
+  "scripts": {
+    "start": "start-storybook --port 9000",
+    "dev": "yarn start",
+    "build": "build-storybook"
+  },
+  "bugs": {
+    "url": "https://github.com/cazetto/force/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@storybook/react": "^5.3.17",
+    "babel-loader": "^8.0.6"
+  },
+  "dependencies": {
+    "@storybook/preset-typescript": "^2.1.0",
+    "force-components": "^0.0.3",
+    "fork-ts-checker-webpack-plugin": "^4.1.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "ts-loader": "^6.2.1"
+  }
+}
