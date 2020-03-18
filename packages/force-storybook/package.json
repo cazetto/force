@@ -15,19 +15,14 @@
   "homepage": "https://forcesite.netlify.com/",
   "license": "MIT",
   "main": "lib/force-storybook.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cazetto/force.git"
   },
   "scripts": {
-    "storybook": "start-storybook"
+    "start": "start-storybook --port 9000",
+    "dev": "yarn start",
+    "build": "build-storybook"
   },
   "bugs": {
     "url": "https://github.com/cazetto/force/issues"

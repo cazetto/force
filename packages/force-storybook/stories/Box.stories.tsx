@@ -16,10 +16,10 @@ export const FlexBox = () => (
       bg="colorGray200"
       alignItems="center"
     >
-      <Box flexGrow="1" height="300px" bg="colorBlue400">
+      <Box flexGrow={1} height="300px" bg="colorBlue400">
         Col 1
       </Box>
-      <Box flexGrow="2" height="200px" bg="colorRed600">
+      <Box flexGrow={2} height="200px" bg="colorRed600">
         Col 2
       </Box>
     </Box>
@@ -62,7 +62,7 @@ export const Colorized = () => (
 export const Transparent = () => (
   <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
     <Box
-      opacity=".5"
+      opacity={0.5}
       bg="colorGray900"
       height="50vh"
       width="100%"
@@ -70,6 +70,7 @@ export const Transparent = () => (
       lineHeight="50vh"
       fontSize="xl"
       zIndex="2"
+      mt="4"
       position="absolute"
     >
       Transparent (0.5)
@@ -81,7 +82,6 @@ export const Transparent = () => (
       width="100%"
       textAlign="center"
       lineHeight="50vh"
-      marginTop="calc(50vh - 50px)"
       fontSize="xl"
       zIndex="1"
     ></Box>
