@@ -5,8 +5,8 @@ import { Theme } from '../themes/typing';
 
 type ThemeProviderProps = {
   theme: Theme;
-  children: ReactNode;
-  globalStyle: ReactNode;
+  children?: ReactNode;
+  globalStyle?: ReactNode;
 };
 
 const ThemeProvider: FC<ThemeProviderProps> = ({

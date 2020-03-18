@@ -1,6 +1,6 @@
 {
   "name": "force-site",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -20,6 +20,8 @@
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "deploy:draft": "npm run build && netlify deploy",
+    "deploy:prod": "npm run build && netlify deploy --prod",
     "__eject__": "react-scripts eject"
   },
   "eslintConfig": {

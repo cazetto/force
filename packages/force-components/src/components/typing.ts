@@ -10,7 +10,7 @@ export type ResponsiveSpace = {
   lg?: Space;
   xl?: Space;
 };
-export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | string;
 export type ResponsiveSize = {
   sm?: Size;
   xs?: Size;
