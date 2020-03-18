@@ -8,11 +8,13 @@
     "/** MONOREPO SCRIPTS */": "",
     "bootstrap": "lerna bootstrap",
     "/** DEV SCRIPTS */": "",
+    "dev:storybook": "lerna run --scope force-storybook dev",
     "dev:docs": "lerna run --scope force-docs dev",
     "dev:site": "lerna run --scope force-site dev",
     "dev:components": "lerna run --scope force-components dev",
     "dev:all": "lerna run dev --parallel",
     "/** BUILD SCRIPTS */": "",
+    "build:storybook": "lerna run --scope force-storybook build",
     "build:docs": "lerna run --scope force-docs build",
     "build:site": "lerna run --scope force-site build",
     "build:components": "lerna run --scope force-components build",
@@ -27,8 +29,5 @@
   },
   "devDependencies": {
     "lerna": "^3.20.2"
-  },
-  "dependencies": {
-    "styled-normalize": "^8.0.7"
   }
 }
