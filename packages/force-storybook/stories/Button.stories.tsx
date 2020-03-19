@@ -1,102 +1,155 @@
 import React from 'react';
+
 import {
   ForceThemeProvider,
   PrimerGlobalStyle,
   themePrimer,
-  Button
+  Button,
+  Box
 } from 'force-components';
 
-export default { title: 'Button' };
+import { actions } from '@storybook/addon-actions';
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
+
+export default {
+  title: 'Button',
+  decorators: [
+    (storyFn: any) => (
+      <ForceThemeProvider
+        theme={themePrimer}
+        globalStyle={<PrimerGlobalStyle />}
+      >
+        {storyFn()}
+      </ForceThemeProvider>
+    ),
+    withKnobs
+  ]
+};
+
+const clickEvent = actions({
+  onClick: 'clicked'
+});
+
+export const WithKnobs = () => (
+  <Button
+    m={select('m', ['0', '1', '2', '3', '4', '5', '6', '7', '8'], '0')}
+    as={select('as', ['button', 'a'], 'button')}
+    href={text('href', 'http://www.facebook.com')}
+    target={select('target', ['_blank', '_self', '_parent', '_top'], '_blank')}
+    alt={text('alt', 'Alt text')}
+    type={select('type', ['button', 'submit', 'reset'], 'button')}
+    autoFocus={boolean('autoFocus(boolean)', false)}
+    outline={boolean('outline(boolean)', false)}
+    disabled={boolean('disabled(boolean)', false)}
+    ariaLabel={text('ariaLabel', 'Aria Label')}
+    name={text('name', 'The Name')}
+    variant={select(
+      'variant',
+      ['primary', 'secondary', 'tertiary', 'info', 'warning', 'danger'],
+      'primary'
+    )}
+    size={select('size', ['xs', 'sm', 'md', 'lg', 'xl'], 'md')}
+    {...clickEvent}
+  >
+    {text('children', 'Changeable Label')}
+  </Button>
+);
 
 export const FilledVariants = () => (
-  <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
-    <Button m="2">Filled Primary</Button>
-    <Button m="2" variant="secondary">
+  <>
+    <Button {...clickEvent} m="2">
+      Filled Primary
+    </Button>
+    <Button {...clickEvent} m="2" variant="secondary">
       Filled Secondary
     </Button>
-    <Button m="2" variant="tertiary">
+    <Button {...clickEvent} m="2" variant="tertiary">
       Filled Tertiary
     </Button>
-    <Button m="2" variant="warning">
+    <Button {...clickEvent} m="2" variant="warning">
       Filled Warning
     </Button>
-    <Button m="2" variant="danger">
+    <Button {...clickEvent} m="2" variant="danger">
       Filled Danger
     </Button>
-    <Button m="2" disabled={true}>
+    <Button {...clickEvent} m="2" disabled={true}>
       Filled Disabled
     </Button>
-  </ForceThemeProvider>
+  </>
 );
 
 export const OutlinedVariants = () => (
-  <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
-    <Button m="2" outline={true}>
+  <>
+    <Button {...clickEvent} m="2" outline={true}>
       Outlined Primary
     </Button>
-    <Button m="2" outline={true} variant="secondary">
+    <Button {...clickEvent} m="2" outline={true} variant="secondary">
       Outlined Secondary
     </Button>
-    <Button m="2" outline={true} variant="tertiary">
+    <Button {...clickEvent} m="2" outline={true} variant="tertiary">
       Outlined Tertiary
     </Button>
-    <Button m="2" outline={true} variant="warning">
+    <Button {...clickEvent} m="2" outline={true} variant="warning">
       Outlined Warning
     </Button>
-    <Button m="2" outline={true} variant="danger">
+    <Button {...clickEvent} m="2" outline={true} variant="danger">
       Outlined Danger
     </Button>
-    <Button m="2" outline={true} disabled={true}>
+    <Button {...clickEvent} m="2" outline={true} disabled={true}>
       Outlined Disabled
     </Button>
-  </ForceThemeProvider>
+  </>
 );
 
 export const Sizes = () => (
-  <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
+  <>
     <div>
-      <Button m="2" size="xs">
+      <Button {...clickEvent} m="2" size="xs">
         Outlined Primary
       </Button>
     </div>
     <div>
-      <Button m="2" size="sm">
+      <Button {...clickEvent} m="2" size="sm">
         Outlined Secondary
       </Button>
     </div>
     <div>
-      <Button m="2" size="md">
+      <Button {...clickEvent} m="2" size="md">
         Outlined Tertiary
       </Button>
     </div>
     <div>
-      <Button m="2" size="lg">
+      <Button {...clickEvent} m="2" size="lg">
         Outlined Warning
       </Button>
     </div>
     <div>
-      <Button m="2" size="xl">
+      <Button {...clickEvent} m="2" size="xl">
         Outlined Danger
       </Button>
     </div>
-  </ForceThemeProvider>
+  </>
 );
 
 export const Margin = () => (
-  <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
+  <>
     <div>
-      <Button m="1">m1</Button>
-    </div>
-    <div>
-      <Button ml="4">ml4</Button>
-    </div>
-    <div>
-      <Button mr="3" mt="4">
-        m3 mt4
-      </Button>
-      <Button mr="3" mt="4">
-        m3 mt4
+      <Button {...clickEvent} m="1">
+        m1
       </Button>
     </div>
-  </ForceThemeProvider>
+    <div>
+      <Button {...clickEvent} ml="4">
+        ml4
+      </Button>
+    </div>
+    <div>
+      <Button {...clickEvent} mr="3" mt="4">
+        m3 mt4
+      </Button>
+      <Button {...clickEvent} mr="3" mt="4">
+        m3 mt4
+      </Button>
+    </div>
+  </>
 );
