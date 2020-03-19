@@ -27,8 +27,8 @@
     "/** DOC SCRIPTS */": "",
     "doc:components": "lerna run --scope force-components doc",    
      "/** CI */": "",
-    "percy": "build-storybook && percy-storybook --widths=320,1280",
-    "chromatic": "CHROMATIC_APP_CODE=1xvyynp25goh chromatic"
+    "percy": "lerna run --scope force-storybook build-storybook && percy-storybook --widths=320,1280",
+    "chromatic": "CHROMATIC_APP_CODE=1xvyynp25goh lerna run --scope force-storybook chromatic"
   },
   "devDependencies": {
     "lerna": "^3.20.2"
