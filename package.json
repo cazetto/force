@@ -26,7 +26,7 @@
     "test:all": "lerna run test --parallel --since master",
     "/** DOC SCRIPTS */": "",
     "doc:components": "lerna run --scope force-components doc",
-    "/** CI */": "",
+     "/** CI SCRIPTS */": "",
     "percy": "lerna run --scope force-storybook build-storybook && percy-storybook --widths=320,1280",
     "chromatic": "CHROMATIC_APP_CODE=1xvyynp25goh lerna run --scope force-storybook chromatic"
   },
