@@ -22,7 +22,8 @@
   "scripts": {
     "start": "start-storybook --port 9000",
     "dev": "yarn start",
-    "build": "build-storybook"
+    "build": "build-storybook",
+    "percy": "build-storybook && percy-storybook --widths=320,1280"
   },
   "bugs": {
     "url": "https://github.com/cazetto/force/issues"
