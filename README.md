@@ -1,12 +1,9 @@
 # Force Design System
 
-<p>
-   https://forcesite.netlify.com/ <img align="right" src="https://percy.io/static/images/percy-badge.svg">
-</p>
+<a href="https://badge.fury.io/js/force-components"><img src="https://badge.fury.io/js/force-components@2x.png" alt="npm version" height="18"></a>
 
-<p align="left">
-  <img width="460" height="300" src="https://www.placecage.com/gif/284/196">
-</p>
+   <img src="https://percy.io/static/images/percy-badge.svg">
+
 
 ## Usage
 
