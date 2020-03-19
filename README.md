@@ -4,7 +4,7 @@
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Force/Force)
 
 
-## It uses
+## Built with
 <p float="left">
     <a href="https://www.typescriptlang.org"><img height="34" src="https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png" /></a>
   <a href="https://reactjs.org/"><img height="38" src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" /></a>
