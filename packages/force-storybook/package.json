@@ -23,7 +23,9 @@
     "start": "start-storybook --port 9000",
     "dev": "yarn start",
     "build": "build-storybook",
-    "percy": "build-storybook && percy-storybook --widths=320,1280"
+    "build-storybook": "build-storybook",
+    "percy": "build-storybook && percy-storybook --widths=320,1280",
+    "chromatic": "CHROMATIC_APP_CODE=1xvyynp25goh chromatic"
   },
   "bugs": {
     "url": "https://github.com/cazetto/force/issues"
@@ -39,7 +41,8 @@
     "@types/react": "^16.9.23",
     "babel-loader": "^8.0.6",
     "react": "^16.13.0",
-    "react-is": "^16.13.0"
+    "react-is": "^16.13.0",
+    "storybook-chromatic": "^3.5.2"
   },
   "dependencies": {
     "@storybook/preset-typescript": "^2.1.0",
