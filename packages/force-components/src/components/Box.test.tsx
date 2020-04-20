@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { ThemeProvider } from 'styled-components';
 import primerTheme from '../themes/primer';
