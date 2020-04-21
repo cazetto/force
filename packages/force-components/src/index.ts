@@ -4,6 +4,7 @@ import Button from './components/Button';
 import Text from './components/Text';
 import Box from './components/Box';
 import List from './components/List';
+import ListItem from './components/ListItem';
 
 export {
   themePrimer,
@@ -13,4 +14,5 @@ export {
   Text,
   Box,
   List,
+  ListItem,
 };

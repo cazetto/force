@@ -4,6 +4,7 @@ import {
   PrimerGlobalStyle,
   themePrimer,
   List,
+  ListItem,
   Box,
 } from 'force-components';
 
@@ -12,9 +13,9 @@ export default { title: 'List' };
 export const UnorderedList = () => (
   <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
     <List>
-      <li>1st Item</li>
-      <li>2nd Item</li>
-      <li>3rd Item</li>
+      <ListItem>1st Item</ListItem>
+      <ListItem>2nd Item</ListItem>
+      <ListItem>3rd Item</ListItem>
     </List>
   </ForceThemeProvider>
 );
@@ -22,9 +23,9 @@ export const UnorderedList = () => (
 export const OrderedList = () => (
   <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
     <List as="ol">
-      <li>1st Item</li>
-      <li>2nd Item</li>
-      <li>3rd Item</li>
+      <ListItem>1st Item</ListItem>
+      <ListItem>2nd Item</ListItem>
+      <ListItem>3rd Item</ListItem>
     </List>
   </ForceThemeProvider>
 );
@@ -32,12 +33,12 @@ export const OrderedList = () => (
 export const DescriptionList = () => (
   <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
     <List as="dl">
-      <dt>ul</dt>
-      <dd>Unordered list</dd>
-      <dt>ol</dt>
-      <dd>Ordered list</dd>
-      <dt>dt</dt>
-      <dd>Description list</dd>
+      <ListItem as="dt">ul</ListItem>
+      <ListItem as="dd">Unordered list</ListItem>
+      <ListItem as="dt">ol</ListItem>
+      <ListItem as="dd">Ordered list</ListItem>
+      <ListItem as="dt">dt</ListItem>
+      <ListItem as="dd">Description list</ListItem>
     </List>
   </ForceThemeProvider>
 );
@@ -46,9 +47,9 @@ export const ListWithMarginAndPaddig = () => (
   <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
     <Box m="4" p="2">
       <List as="ul">
-        <li>1st Item</li>
-        <li>2nd Item</li>
-        <li>3rd Item</li>
+        <ListItem>1st Item</ListItem>
+        <ListItem>2nd Item</ListItem>
+        <ListItem>3rd Item</ListItem>
       </List>
     </Box>
   </ForceThemeProvider>
