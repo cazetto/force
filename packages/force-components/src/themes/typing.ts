@@ -63,4 +63,5 @@ export interface Theme {
   text: {
     colors: Variants;
   };
+  borderWidths: Spaces;
 }

@@ -46,7 +46,7 @@ const getCommonCss = ({
   sizePadding,
   sizeFocusedShadow,
   colorFocusedShadow,
-  disabled
+  disabled,
 }: any) => {
   return css`
     display: inline-block;
@@ -94,7 +94,7 @@ export const ButtonStyled = styled.button.attrs(
     disabled,
     outline,
     variant = 'primary',
-    size = 'md'
+    size = 'md',
   }: ButtonProps) => {
     if (!theme?.button) {
       throw new Error(
@@ -111,12 +111,12 @@ export const ButtonStyled = styled.button.attrs(
       sizeFont: theme?.button.sizes.font[size],
       sizeFocusedShadow: theme?.button.sizes.focusedShadow[size],
       borderWidth: theme?.button.sizes.borderWidth[size],
-      outline
+      outline,
     };
   }
 )`
-  ${props => getCommonCss(props)};
-  ${props => (props.outline ? getOutlineCss(props) : getFilledCss(props))};
+  ${(props) => getCommonCss(props)};
+  ${(props) => (props.outline ? getOutlineCss(props) : getFilledCss(props))};
   ${space}
   ${layout}
   ${color}

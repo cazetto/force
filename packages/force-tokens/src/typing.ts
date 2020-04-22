@@ -178,4 +178,14 @@ export interface Tokens {
   sizeSpacing6: string;
   sizeSpacing7: string;
   sizeSpacing8: string;
+  // Size Border Width
+  sizeBorderWidth0: string;
+  sizeBorderWidth1: string;
+  sizeBorderWidth2: string;
+  sizeBorderWidth3: string;
+  sizeBorderWidth4: string;
+  sizeBorderWidth5: string;
+  sizeBorderWidth6: string;
+  sizeBorderWidth7: string;
+  sizeBorderWidth8: string;
 }
