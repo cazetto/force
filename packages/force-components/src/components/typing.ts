@@ -256,7 +256,7 @@ export type GridAutoColumns =
 export type GridTemplateRows = Globals | 'none' | string;
 export type GridTemplateColumns = Globals | 'none' | string;
 export type GridTemplateAreas = Globals | 'none' | string;
-export type Postion = 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky';
+export type Position = 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky';
 export type Variant =
   | 'primary'
   | 'secondary'

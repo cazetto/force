@@ -1,21 +1,20 @@
 import React, { ReactNode } from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import { ThemeProvider } from 'styled-components';
 import primerTheme from '../themes/primer';
-import Box from './Box';
+import List from './List';
 
-const setupBox = (props?: {}, children?: ReactNode) => {
+const setupList = (props?: {}, children?: ReactNode) => {
   return render(
     <ThemeProvider theme={primerTheme}>
-      <Box {...props}>{children}</Box>
+      <List {...props}>{children}</List>
     </ThemeProvider>
   );
 };
 
-describe('Box Component', () => {
+describe('List Component', () => {
   test('should renders without errors', () => {
-    const box = setupBox(undefined);
-    expect(box).toBeTruthy();
+    const list = setupList();
+    expect(list.getByTestId('list')).toBeTruthy();
   });
 });

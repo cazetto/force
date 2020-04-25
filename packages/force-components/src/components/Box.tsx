@@ -1,4 +1,4 @@
-import React, { ReactNode, FC } from 'react';
+import React, { ReactNode, FC, forwardRef, RefObject } from 'react';
 import styled from 'styled-components';
 import {
   color,
@@ -7,7 +7,8 @@ import {
   typography,
   flexbox,
   grid,
-  position
+  position,
+  border,
 } from 'styled-system';
 import {
   ComponentBaseProps,
@@ -50,8 +51,8 @@ import {
   GridTemplateRows,
   GridTemplateColumns,
   GridTemplateAreas,
-  Postion,
-  Globals
+  Position,
+  Globals,
 } from './typing';
 
 interface BoxProps extends ComponentBaseProps {
@@ -107,12 +108,16 @@ interface BoxProps extends ComponentBaseProps {
   gridTemplateColumns?: GridTemplateColumns;
   gridTemplateAreas?: GridTemplateAreas;
   // Position (styled-system)
-  position?: Postion;
+  position?: Position;
   zIndex?: number | string;
   top?: Globals | number | string;
   right?: Globals | number | string;
   bottom?: Globals | number | string;
   left?: Globals | number | string;
+  // Border (styled-system)
+  borderWidth?: Space;
+  borderColor?: Color;
+  borderStyle?: 'solid';
   // Space (styled-system)
   m?: Space | ResponsiveSpace;
   mt?: Space | ResponsiveSpace;
@@ -128,13 +133,24 @@ interface BoxProps extends ComponentBaseProps {
   pl?: Space | ResponsiveSpace;
   px?: Space | ResponsiveSpace;
   py?: Space | ResponsiveSpace;
+  //
+  ref?: RefObject<any>;
+  //
+  onClick?: any;
 }
 
-const Box: FC<BoxProps> = ({ children, ...rest }) => {
-  return <StyledBox {...rest}>{children}</StyledBox>;
-};
+const Box: FC<BoxProps> = forwardRef<HTMLElement, BoxProps>(
+  ({ children, ...rest }, ref) => {
+    return (
+      <StyledBox {...rest} ref={ref}>
+        {children}
+      </StyledBox>
+    );
+  }
+);
 
-const StyledBox = styled.div.attrs(() => {})`
+const StyledBox = styled.div.attrs(() => {})`  
+  box-sizing: border-box;
   ${color}
   ${space}
   ${layout}
@@ -142,6 +158,7 @@ const StyledBox = styled.div.attrs(() => {})`
   ${flexbox}
   ${grid}
   ${position}
+  ${border}
 `;
 
 export default Box;

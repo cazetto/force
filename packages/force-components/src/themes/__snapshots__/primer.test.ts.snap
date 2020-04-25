@@ -2,6 +2,13 @@
 
 exports[`Primer Theme need to match snapshot 1`] = `
 Object {
+  "breakpoints": Object {
+    "lg": "1280px",
+    "md": "960px",
+    "sm": "600px",
+    "xl": "1920px",
+    "xs": "0px",
+  },
   "button": Object {
     "colors": Object {
       "contrast": Object {
@@ -150,7 +157,7 @@ Object {
     "colorYellow900": "#735c0f",
   },
   "fontSizes": Object {
-    "lg": "20px",
+    "lg": "22px",
     "md": "16px",
     "sm": "14px",
     "xl": "26px",
@@ -167,17 +174,17 @@ Object {
     "800": "800",
     "900": "900",
   },
-  "spaces": Array [
-    "0px",
-    "4px",
-    "8px",
-    "16px",
-    "32px",
-    "64px",
-    "128px",
-    "256px",
-    "512px",
-  ],
+  "space": Object {
+    "0": "0px",
+    "1": "4px",
+    "2": "8px",
+    "3": "16px",
+    "4": "32px",
+    "5": "64px",
+    "6": "128px",
+    "7": "256px",
+    "8": "512px",
+  },
   "text": Object {
     "colors": Object {
       "danger": "#cb2431",
