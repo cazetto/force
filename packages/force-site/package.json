@@ -1,6 +1,6 @@
 {
   "name": "force-site",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
