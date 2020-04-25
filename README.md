@@ -2,6 +2,7 @@
 
 <a href="https://badge.fury.io/js/force-components"><img src="https://badge.fury.io/js/force-components.svg" alt="npm version" height="20"></a>
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Force/Force)
+[![cazetto](https://circleci.com/gh/cazetto/force.svg?style=svg)](https://app.circleci.com/pipelines/github/cazetto/force)
 
 
 ## Built with
