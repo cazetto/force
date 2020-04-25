@@ -1,6 +1,6 @@
 {
   "name": "force-components",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Force Design System components",
   "author": "André Pesci Cazetto <cazetto.andre@gmail.com>",
   "homepage": "https://github.com/cazetto/force#readme",
@@ -26,7 +26,8 @@
     "format": "prettier-standard --format",
     "test": "jest --coverage --watch",
     "test:updateSnapshot": "jest --updateSnapshot",
-    "doc": "typedoc --options typedoc.json"
+    "doc": "typedoc --options typedoc.json",
+    "prepublishOnly": "npm run build"
   },
   "bugs": {
     "url": "https://github.com/cazetto/force/issues"
