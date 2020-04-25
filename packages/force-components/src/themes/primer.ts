@@ -179,7 +179,17 @@ const {
   sizeSpacing5,
   sizeSpacing6,
   sizeSpacing7,
-  sizeSpacing8
+  sizeSpacing8,
+  // Size Border Width
+  sizeBorderWidth0,
+  sizeBorderWidth1,
+  sizeBorderWidth2,
+  sizeBorderWidth3,
+  sizeBorderWidth4,
+  sizeBorderWidth5,
+  sizeBorderWidth6,
+  sizeBorderWidth7,
+  sizeBorderWidth8,
 } = tokens;
 
 const themePrimer: Theme = {
@@ -271,14 +281,14 @@ const themePrimer: Theme = {
     colorPink600,
     colorPink700,
     colorPink800,
-    colorPink900
+    colorPink900,
   },
   breakpoints: {
     xs: sizeBreakpointXs,
     sm: sizeBreakpointSm,
     md: sizeBreakpointMd,
     lg: sizeBreakpointLg,
-    xl: sizeBreakpointXl
+    xl: sizeBreakpointXl,
   },
   space: {
     0: sizeSpacing0,
@@ -289,7 +299,7 @@ const themePrimer: Theme = {
     5: sizeSpacing5,
     6: sizeSpacing6,
     7: sizeSpacing7,
-    8: sizeSpacing8
+    8: sizeSpacing8,
   },
   button: {
     colors: {
@@ -299,14 +309,14 @@ const themePrimer: Theme = {
         tertiary: colorButtonHueTertiary,
         warning: colorButtonHueWarning,
         danger: colorButtonHueDanger,
-        disabled: colorButtonHueDisabled
+        disabled: colorButtonHueDisabled,
       },
       focusedShadow: {
         primary: colorButtonFocusedShadowPrimary,
         secondary: colorButtonFocusedShadowSecondary,
         tertiary: colorButtonFocusedShadowTertiary,
         danger: colorButtonFocusedShadowDanger,
-        warning: colorButtonFocusedShadowWarning
+        warning: colorButtonFocusedShadowWarning,
       },
       contrast: {
         primary: colorButtonContrastPrimary,
@@ -314,8 +324,8 @@ const themePrimer: Theme = {
         tertiary: colorButtonContrastTertiary,
         warning: colorButtonContrastWarning,
         danger: colorButtonContrastDanger,
-        disabled: colorButtonContrastDisabled
-      }
+        disabled: colorButtonContrastDisabled,
+      },
     },
     sizes: {
       font: {
@@ -323,30 +333,30 @@ const themePrimer: Theme = {
         sm: sizeButtonFontSm,
         md: sizeButtonFontMd,
         lg: sizeButtonFontLg,
-        xl: sizeButtonFontXl
+        xl: sizeButtonFontXl,
       },
       focusedShadow: {
         xs: sizeButtonFocusedShadowXs,
         sm: sizeButtonFocusedShadowSm,
         md: sizeButtonFocusedShadowMd,
         lg: sizeButtonFocusedShadowLg,
-        xl: sizeButtonFocusedShadowXl
+        xl: sizeButtonFocusedShadowXl,
       },
       borderWidth: {
         xs: sizeButtonBorderWidthXs,
         sm: sizeButtonBorderWidthSm,
         md: sizeButtonBorderWidthMd,
         lg: sizeButtonBorderWidthLg,
-        xl: sizeButtonBorderWidthXl
+        xl: sizeButtonBorderWidthXl,
       },
       padding: {
         xs: `${sizeButtonPaddingVerticalXs} ${sizeButtonPaddingHorizontalXs}`,
         sm: `${sizeButtonPaddingVerticalSm} ${sizeButtonPaddingHorizontalSm}`,
         md: `${sizeButtonPaddingVerticalMd} ${sizeButtonPaddingHorizontalMd}`,
         lg: `${sizeButtonPaddingVerticalLg} ${sizeButtonPaddingHorizontalLg}`,
-        xl: `${sizeButtonPaddingVerticalXl} ${sizeButtonPaddingHorizontalXl}`
-      }
-    }
+        xl: `${sizeButtonPaddingVerticalXl} ${sizeButtonPaddingHorizontalXl}`,
+      },
+    },
   },
 
   fontSizes: {
@@ -354,7 +364,7 @@ const themePrimer: Theme = {
     sm: sizeTextSm,
     md: sizeTextMd,
     lg: sizeTextLg,
-    xl: sizeTextXl
+    xl: sizeTextXl,
   },
   fontWeights: {
     // @TODO - Remove these "replaces" after create a custom transformer(style-dictionary) for font-weight in force-token
@@ -366,7 +376,7 @@ const themePrimer: Theme = {
     600: sizeFontWeight600.replace(/\D/g, ''),
     700: sizeFontWeight700.replace(/\D/g, ''),
     800: sizeFontWeight800.replace(/\D/g, ''),
-    900: sizeFontWeight900.replace(/\D/g, '')
+    900: sizeFontWeight900.replace(/\D/g, ''),
   },
   text: {
     colors: {
@@ -375,8 +385,19 @@ const themePrimer: Theme = {
       tertiary: colorTextTertiary,
       warning: colorTextWarning,
       info: colorTextInfo,
-      danger: colorTextDanger
-    }
+      danger: colorTextDanger,
+    },
+  },
+  borderWidths: {
+    0: sizeBorderWidth0,
+    1: sizeBorderWidth1,
+    2: sizeBorderWidth2,
+    3: sizeBorderWidth3,
+    4: sizeBorderWidth4,
+    5: sizeBorderWidth5,
+    6: sizeBorderWidth6,
+    7: sizeBorderWidth7,
+    8: sizeBorderWidth8,
   }
 };
 
