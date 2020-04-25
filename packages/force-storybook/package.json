@@ -1,6 +1,6 @@
 {
   "name": "force-storybook",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Force Storybook",
   "keywords": [
     "storybook",
@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@storybook/preset-typescript": "^2.1.0",
-    "force-components": "^0.0.3",
+    "force-components": "^0.0.6",
     "fork-ts-checker-webpack-plugin": "^4.1.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
