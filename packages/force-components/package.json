@@ -1,6 +1,6 @@
 {
   "name": "force-components",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "Force Design System components",
   "author": "André Pesci Cazetto <cazetto.andre@gmail.com>",
   "homepage": "https://github.com/cazetto/force#readme",
@@ -81,6 +81,6 @@
   },
   "dependencies": {
     "@primer/octicons-react": "^9.6.0",
-    "force-tokens": "^0.0.3"
+    "force-tokens": "^0.0.6"
   }
 }
