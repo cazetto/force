@@ -45,19 +45,25 @@ export const WithChildren = () => (
   <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
     <Box>
       <ImageSlider items={mockedData}>
-        <Box height="800px" display="flex" justifyContent="center">
+        <Box height="400px" display="flex" justifyContent="center">
           <ImageSlider.Image />
         </Box>
         <Box>
-          <ImageSlider.Thumbs />
-          <ImageSlider.Prev>
-            <Octicon icon={ChevronLeft} />
-            Prev
-          </ImageSlider.Prev>
-          <ImageSlider.Next>
-            Next
-            <Octicon icon={ChevronRight} />
-          </ImageSlider.Next>
+          <ImageSlider.Thumbs
+            selectedColor="colorGray600"
+            children={{
+              prevControl: (
+                <ImageSlider.Prev>
+                  <Octicon icon={ChevronLeft} />
+                </ImageSlider.Prev>
+              ),
+              nextControl: (
+                <ImageSlider.Next>
+                  <Octicon icon={ChevronRight} />
+                </ImageSlider.Next>
+              ),
+            }}
+          />
         </Box>
       </ImageSlider>
     </Box>

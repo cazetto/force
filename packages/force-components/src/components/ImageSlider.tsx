@@ -8,7 +8,7 @@ import React, {
   useRef,
 } from 'react';
 import styled from 'styled-components';
-import { ComponentBaseProps } from './typing';
+import { ComponentBaseProps, Color } from './typing';
 import Box from './Box';
 
 type Element = 'ul' | 'ol' | 'dl';
@@ -58,32 +58,44 @@ const ImageSliderStyled = styled.div`
 
 // ThumbList
 interface ThumbListProps extends ComponentBaseProps {
-  children?: ReactNode;
+  children: { nextControl: ReactNode; prevControl: ReactNode };
+  selectedColor?: Color;
 }
 
-const ThumbList: FC<ThumbListProps> = () => {
+const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
+  const { nextControl, prevControl } = children;
   const { items, selectedItemIndex, setSelectedItemIndex } = useContext(
     ImageSliderContext
   )!;
   let selectedRef: any;
 
   return (
-    <Box width="100%">
+    <Box display="flex">
+      {prevControl && prevControl}
+
       <Box display="flex" flexDirection="row" overflowX="scroll">
         {items.map((currentItem: any, currentItemIndex: number) => {
           const ref = useRef(null);
           if (selectedItemIndex === currentItemIndex && ref?.current) {
             selectedRef = ref;
             selectedRef.current.parentElement.scroll({
-              left: selectedRef.current.offsetLeft,
+              left:
+                selectedRef.current.offsetLeft -
+                selectedRef.current.parentElement.offsetLeft,
               behavior: 'smooth',
             });
           }
           return (
             <Box
               ref={ref}
-              pt="3"
-              pb="3"
+              pl="1"
+              pt="1"
+              pr="1"
+              bg={
+                currentItemIndex === selectedItemIndex
+                  ? selectedColor || 'colorGray500'
+                  : 'colorGray000'
+              }
               key={currentItemIndex}
               data-item-id={currentItemIndex}
               onClick={(event: any) => {
@@ -93,21 +105,12 @@ const ThumbList: FC<ThumbListProps> = () => {
                   )!;
               }}
             >
-              <Box
-                borderWidth="3"
-                borderStyle="solid"
-                borderColor={
-                  currentItemIndex === selectedItemIndex
-                    ? 'colorRed400'
-                    : 'colorGray000'
-                }
-              >
-                <img src={currentItem.thumb} />
-              </Box>
+              <img src={currentItem.thumb} />
             </Box>
           );
         })}
       </Box>
+      {nextControl && nextControl}
     </Box>
   );
 };
