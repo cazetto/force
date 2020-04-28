@@ -13,21 +13,16 @@ import Box from './Box';
 
 type Element = 'ul' | 'ol' | 'dl';
 
-interface ImageItem {
-  thumb: string;
-  image: string;
-  ref?: any;
-}
-
+type RenderProps = (selectedItem: any) => ReactNode;
 // ImageSlider
 interface ImageSliderProps extends ComponentBaseProps {
-  items: ImageItem[];
-  children?: ReactNode;
+  items: [];
+  children: ReactNode | RenderProps;
   as?: Element;
 }
 
 interface ImageSliderContextInterface {
-  items: ImageItem[];
+  items: any[];
   selectedItemIndex: number;
   setSelectedItemIndex?: (value: number) => void;
 }
@@ -40,7 +35,7 @@ const { Provider: ImageSliderProvider } = ImageSliderContext;
 const ImageSlider = ({ children, items }: ImageSliderProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
 
-  console.log('ImageSlider:selectedItemIndex', selectedItemIndex);
+  console.log('é function? ');
 
   return (
     <ImageSliderProvider
@@ -51,7 +46,9 @@ const ImageSlider = ({ children, items }: ImageSliderProps) => {
       }}
     >
       <ImageSliderStyled data-testid="content-slider">
-        {children}
+        {typeof children === 'function'
+          ? children(items[selectedItemIndex])
+          : children}
       </ImageSliderStyled>
     </ImageSliderProvider>
   );
@@ -73,12 +70,10 @@ const ThumbList: FC<ThumbListProps> = () => {
   )!;
   let selectedRef: any;
 
-  console.log('ThumbList:selectedItemIndex', selectedItemIndex);
-
   return (
     <Box width="100%">
       <Box display="flex" flexDirection="row" overflowX="scroll">
-        {items.map((currentItem: ImageItem, currentItemIndex: number) => {
+        {items.map((currentItem: any, currentItemIndex: number) => {
           const ref = useRef(null);
           if (selectedItemIndex === currentItemIndex) {
             selectedRef = ref;
@@ -101,8 +96,6 @@ const ThumbList: FC<ThumbListProps> = () => {
                   setSelectedItemIndex(
                     parseInt(event.currentTarget.dataset.itemId)
                   )!;
-
-                console.log(event.currentTarget.dataset.itemId);
               }}
             >
               <Box
