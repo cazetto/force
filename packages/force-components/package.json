@@ -1,18 +1,19 @@
 {
   "name": "force-components",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Force Design System components",
   "author": "André Pesci Cazetto <cazetto.andre@gmail.com>",
   "homepage": "https://github.com/cazetto/force#readme",
   "license": "ISC",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "directories": {
     "src": "src"
   },
   "files": [
-    "src"
+    "dist"
   ],
   "repository": {
     "type": "git",
