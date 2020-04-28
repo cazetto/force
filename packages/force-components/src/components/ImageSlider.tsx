@@ -14,15 +14,21 @@ import Box from './Box';
 type Element = 'ul' | 'ol' | 'dl';
 
 type RenderProps = (selectedItem: any) => ReactNode;
+
+type Item = {
+  thumb: string;
+  image: string;
+};
+
 // ImageSlider
 interface ImageSliderProps extends ComponentBaseProps {
-  items: [];
+  items: Item[];
   children: ReactNode | RenderProps;
   as?: Element;
 }
 
 interface ImageSliderContextInterface {
-  items: any[];
+  items: Item[];
   selectedItemIndex: number;
   setSelectedItemIndex?: (value: number) => void;
 }
