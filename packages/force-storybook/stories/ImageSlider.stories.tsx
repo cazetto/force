@@ -43,9 +43,11 @@ https: const mockedData = [
 
 export const WithChildren = () => (
   <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
-    <Box width="600px">
+    <Box>
       <ImageSlider items={mockedData}>
-        <ImageSlider.Image />
+        <Box height="800px" display="flex" justifyContent="center">
+          <ImageSlider.Image />
+        </Box>
         <Box>
           <ImageSlider.Thumbs />
           <ImageSlider.Prev>
