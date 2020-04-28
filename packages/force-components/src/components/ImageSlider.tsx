@@ -8,26 +8,27 @@ import React, {
   useRef,
 } from 'react';
 import styled from 'styled-components';
-import { ComponentBaseProps } from './typing';
+import { ComponentBaseProps, Color } from './typing';
 import Box from './Box';
 
 type Element = 'ul' | 'ol' | 'dl';
 
-interface ImageItem {
+type RenderProps = (selectedItem: any) => ReactNode;
+
+type Item = {
   thumb: string;
   image: string;
-  ref?: any;
-}
+};
 
 // ImageSlider
 interface ImageSliderProps extends ComponentBaseProps {
-  items: ImageItem[];
-  children?: ReactNode;
+  items: Item[];
+  children: ReactNode | RenderProps;
   as?: Element;
 }
 
 interface ImageSliderContextInterface {
-  items: ImageItem[];
+  items: Item[];
   selectedItemIndex: number;
   setSelectedItemIndex?: (value: number) => void;
 }
@@ -39,9 +40,6 @@ const { Provider: ImageSliderProvider } = ImageSliderContext;
 
 const ImageSlider = ({ children, items }: ImageSliderProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
-
-  console.log('ImageSlider:selectedItemIndex', selectedItemIndex);
-
   return (
     <ImageSliderProvider
       value={{
@@ -51,7 +49,9 @@ const ImageSlider = ({ children, items }: ImageSliderProps) => {
       }}
     >
       <ImageSliderStyled data-testid="content-slider">
-        {children}
+        {typeof children === 'function'
+          ? children(items[selectedItemIndex])
+          : children}
       </ImageSliderStyled>
     </ImageSliderProvider>
   );
@@ -64,36 +64,44 @@ const ImageSliderStyled = styled.div`
 
 // ThumbList
 interface ThumbListProps extends ComponentBaseProps {
-  children?: ReactNode;
+  children: { nextControl: ReactNode; prevControl: ReactNode };
+  selectedColor?: Color;
 }
 
-const ThumbList: FC<ThumbListProps> = () => {
+const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
+  const { nextControl, prevControl } = children;
   const { items, selectedItemIndex, setSelectedItemIndex } = useContext(
     ImageSliderContext
   )!;
   let selectedRef: any;
 
-  console.log('ThumbList:selectedItemIndex', selectedItemIndex);
-
   return (
-    <Box width="100%">
+    <Box display="flex">
+      {prevControl && prevControl}
+
       <Box display="flex" flexDirection="row" overflowX="scroll">
-        {items.map((currentItem: ImageItem, currentItemIndex: number) => {
+        {items.map((currentItem: any, currentItemIndex: number) => {
           const ref = useRef(null);
-          if (selectedItemIndex === currentItemIndex) {
+          if (selectedItemIndex === currentItemIndex && ref?.current) {
             selectedRef = ref;
-            selectedRef?.current?.scrollIntoView({
+            selectedRef.current.parentElement.scroll({
+              left:
+                selectedRef.current.offsetLeft -
+                selectedRef.current.parentElement.offsetLeft,
               behavior: 'smooth',
-              block: 'end',
-              inline: 'start',
             });
           }
-
           return (
             <Box
               ref={ref}
-              pt="3"
-              pb="3"
+              pl="1"
+              pt="1"
+              pr="1"
+              bg={
+                currentItemIndex === selectedItemIndex
+                  ? selectedColor || 'colorGray500'
+                  : 'colorGray000'
+              }
               key={currentItemIndex}
               data-item-id={currentItemIndex}
               onClick={(event: any) => {
@@ -101,25 +109,14 @@ const ThumbList: FC<ThumbListProps> = () => {
                   setSelectedItemIndex(
                     parseInt(event.currentTarget.dataset.itemId)
                   )!;
-
-                console.log(event.currentTarget.dataset.itemId);
               }}
             >
-              <Box
-                borderWidth="3"
-                borderStyle="solid"
-                borderColor={
-                  currentItemIndex === selectedItemIndex
-                    ? 'colorRed400'
-                    : 'colorGray000'
-                }
-              >
-                <img src={currentItem.thumb} />
-              </Box>
+              <img src={currentItem.thumb} />
             </Box>
           );
         })}
       </Box>
+      {nextControl && nextControl}
     </Box>
   );
 };
@@ -131,8 +128,13 @@ interface ImageProps extends ComponentBaseProps {
 
 const Image: FC<ImageProps> = () => {
   const { items, selectedItemIndex } = useContext(ImageSliderContext)!;
-  return <img width="100%" src={items[selectedItemIndex]['image']} />;
+  return <StyledImage src={items[selectedItemIndex]['image']} />;
 };
+
+const StyledImage = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+`;
 
 // Next and Prev Buttons
 interface NextPrevButton extends ComponentBaseProps {

@@ -9,8 +9,12 @@ interface ListProps extends ComponentBaseProps {
   as?: Element;
 }
 
-const List: FC<ListProps> = ({ children }) => {
-  return <ListStyled data-testid="list">{children}</ListStyled>;
+const List: FC<ListProps> = ({ children, ...rest }) => {
+  return (
+    <ListStyled {...rest} data-testid="list">
+      {children}
+    </ListStyled>
+  );
 };
 
 const ListStyled = styled.ul`

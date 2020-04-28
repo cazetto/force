@@ -9,8 +9,12 @@ interface ListItemProps extends ComponentBaseProps {
   as?: Element;
 }
 
-const ListItem: FC<ListItemProps> = ({ children }) => {
-  return <ListItemStyled data-testid="list-item">{children}</ListItemStyled>;
+const ListItem: FC<ListItemProps> = ({ children, ...rest }) => {
+  return (
+    <ListItemStyled {...rest} data-testid="list-item">
+      {children}
+    </ListItemStyled>
+  );
 };
 
 const ListItemStyled = styled.li`
