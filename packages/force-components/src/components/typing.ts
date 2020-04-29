@@ -178,6 +178,13 @@ export type FlexDirection =
   | 'row-reverse'
   | 'column'
   | 'column-reverse';
+export type ResponsiveFlexDirection = {
+  sm?: FlexDirection;
+  xs?: FlexDirection;
+  md?: FlexDirection;
+  lg?: FlexDirection;
+  xl?: FlexDirection;
+};
 export type Flex = Globals | 'auto' | 'none' | number | string;
 export type FlexGrow = Globals | number;
 export type FlexShrink = Globals | number;
