@@ -78,7 +78,6 @@ const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
   return (
     <Box display="flex">
       {prevControl && prevControl}
-
       <Box display="flex" flexDirection="row" overflowX="scroll">
         {items.map((currentItem: any, currentItemIndex: number) => {
           const ref = useRef(null);
