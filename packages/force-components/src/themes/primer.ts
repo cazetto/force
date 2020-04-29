@@ -1,6 +1,6 @@
 import tokens from 'force-tokens';
 import { Theme } from './typing';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 const {
   // Colors
@@ -398,13 +398,24 @@ const themePrimer: Theme = {
     6: sizeBorderWidth6,
     7: sizeBorderWidth7,
     8: sizeBorderWidth8,
-  }
+  },
 };
 
-export const PrimerGlobalStyle = createGlobalStyle`
-  body {
+const primerDefaultStyle = css`
+  html {
     font-family: 'Roboto', sans-serif;
   }
+`;
+
+export const PrimerGlobalStyle = createGlobalStyle`
+  ${primerDefaultStyle}
+`;
+
+export const extendPrimerGlobalStyle = (
+  customStyle: typeof primerDefaultStyle
+) => createGlobalStyle`
+  ${primerDefaultStyle}
+  ${customStyle};
 `;
 
 export default themePrimer;
