@@ -1,4 +1,7 @@
-import themePrimer, { PrimerGlobalStyle } from './themes/primer';
+import themePrimer, {
+  PrimerGlobalStyle,
+  extendPrimerGlobalStyle,
+} from './themes/primer';
 import ForceThemeProvider from './components/ThemeProvider';
 import Button from './components/Button';
 import Text from './components/Text';
@@ -9,6 +12,7 @@ import ImageSlider from './components/ImageSlider';
 
 export {
   themePrimer,
+  extendPrimerGlobalStyle,
   PrimerGlobalStyle,
   ForceThemeProvider,
   Button,
