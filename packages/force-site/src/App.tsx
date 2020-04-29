@@ -5,7 +5,7 @@ import {
   ForceThemeProvider,
   Box,
   Button,
-  Text
+  Text,
 } from 'force-components';
 
 const GlobalStyle = <PrimerGlobalStyle />;
