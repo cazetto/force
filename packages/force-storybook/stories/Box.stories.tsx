@@ -3,7 +3,7 @@ import {
   ForceThemeProvider,
   PrimerGlobalStyle,
   themePrimer,
-  Box
+  Box,
 } from 'force-components';
 
 export default { title: 'Box' };
@@ -138,6 +138,14 @@ export const Font = () => (
       fontSize="sm"
       fontWeight="900"
     >
+      Padding
+    </Box>
+  </ForceThemeProvider>
+);
+
+export const Border = () => (
+  <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
+    <Box p="4" borderColor="colorRed" borderStyle="solid" borderWidth="6">
       Padding
     </Box>
   </ForceThemeProvider>

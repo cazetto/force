@@ -23,6 +23,7 @@ export default {
     external(),
     resolve(),
     typescript({
+      tsconfig: 'tsconfig.json',
       rollupCommonJSResolveHack: true,
       exclude: ['**/__tests__/**'],
       clean: true,
