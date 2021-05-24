@@ -34,6 +34,7 @@ import {
   JustifyContent,
   FlexWrap,
   FlexDirection,
+  ResponsiveFlexDirection,
   Flex,
   FlexGrow,
   FlexShrink,
@@ -87,7 +88,7 @@ interface BoxProps extends ComponentBaseProps {
   justifyItems?: JustifyItems;
   justifyContent?: JustifyContent;
   flexWrap?: FlexWrap;
-  flexDirection?: FlexDirection;
+  flexDirection?: FlexDirection | ResponsiveFlexDirection;
   flex?: Flex;
   flexGrow?: FlexGrow;
   flexShrink?: FlexShrink;
