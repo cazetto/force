@@ -21,7 +21,7 @@ type Item = {
 };
 
 // ImageSlider
-interface ImageSliderProps extends ComponentBaseProps {
+export interface ImageSliderProps extends ComponentBaseProps {
   items: Item[];
   children: ReactNode | RenderProps;
   as?: Element;
@@ -41,19 +41,21 @@ const { Provider: ImageSliderProvider } = ImageSliderContext;
 const ImageSlider = ({ children, items }: ImageSliderProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
   return (
-    <ImageSliderProvider
-      value={{
-        items,
-        selectedItemIndex,
-        setSelectedItemIndex,
-      }}
-    >
-      <ImageSliderStyled data-testid="content-slider">
-        {typeof children === 'function'
-          ? children(items[selectedItemIndex])
-          : children}
-      </ImageSliderStyled>
-    </ImageSliderProvider>
+    <Box data-testid="thumb-slider">
+      <ImageSliderProvider
+        value={{
+          items,
+          selectedItemIndex,
+          setSelectedItemIndex,
+        }}
+      >
+        <ImageSliderStyled data-testid="content-slider">
+          {typeof children === 'function'
+            ? children(items[selectedItemIndex])
+            : children}
+        </ImageSliderStyled>
+      </ImageSliderProvider>
+    </Box>
   );
 };
 

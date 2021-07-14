@@ -24,7 +24,7 @@
     "dev": "rollup -cw",
     "lint": "standard",
     "format": "prettier-standard --format",
-    "test": "jest --coverage --watch",
+    "test": "jest --watch",
     "test:updateSnapshot": "jest --updateSnapshot",
     "doc": "typedoc --options typedoc.json",
     "prepublishOnly": "npm run build",
