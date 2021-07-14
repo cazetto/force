@@ -1,14 +1,27 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { TextField } from './TextField';
+import { fireEvent, render } from '@testing-library/react';
+import TextField from './TextField';
 
-function setup(props?: {}) {
-  return render(<TextField {...props} />);
+function setup() {
+  const props = { 'aria-label': 'Username' };
+  const utils = render(<TextField {...props} />);
+  const component = utils.getByLabelText(props['aria-label']) as HTMLInputElement;
+  return {
+    ...utils,
+    component,
+  };
 }
 
 describe('TextField Component', () => {
-  test('should renders without errors', () => {
-    const textField = setup();
-    expect(textField).toBeTruthy();
+
+  test('should render without errors', () => {
+    const { component } = setup();
+    expect(component).toBeTruthy();
+  });
+
+  test('should change text value on type', () => {
+    const { component } = setup();
+    fireEvent.change(component, { target: { value: 'the text' } });
+    expect(component.value).toBe('the text');
   });
 });

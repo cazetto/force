@@ -1,10 +1,12 @@
 import React, { FC } from 'react';
 import { ComponentBaseProps } from './typing';
 
-interface TextFieldProps extends ComponentBaseProps {}
-
-const TextField: FC<TextFieldProps> = () => {
-  return <input type="text" />
+export interface TextFieldProps extends ComponentBaseProps {
+  ariaLabel?: string;
 }
 
-export { TextField };
+export const TextField: FC<TextFieldProps> = (props = {}) => {  
+  return <input type="text" {...props} />;
+}
+
+export default TextField;
