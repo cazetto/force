@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "/** MONOREPO SCRIPTS */": "",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "npx lerna bootstrap",
     "/** DEV SCRIPTS */": "",
     "dev:storybook": "lerna run --scope force-storybook dev",
     "dev:docs": "lerna run --scope force-docs dev",
@@ -22,7 +22,7 @@
     "build:all": "lerna run build --stream",
     "/** TEST SCRIPTS */": "",
     "test:site": "lerna run --scope force-site test --since master",
-    "test:components": "lerna run --scope force-components test --since master",
+    "test:components": "lerna run --scope force-components test --since master --stream",
     "test:all": "lerna run test --parallel --since master",
     "/** DOC SCRIPTS */": "",
     "doc:components": "lerna run --scope force-components doc",
