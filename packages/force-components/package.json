@@ -20,8 +20,8 @@
     "url": "git+https://github.com/cazetto/force.git"
   },
   "scripts": {
+    "start": "rollup -cw",
     "build": "rollup -c",
-    "dev": "rollup -cw",
     "lint": "standard",
     "format": "prettier-standard --format",
     "test": "jest --watch",

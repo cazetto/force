@@ -17,7 +17,7 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "dev": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "deploy:draft": "npm run build && netlify deploy",
