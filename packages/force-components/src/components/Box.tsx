@@ -1,4 +1,4 @@
-import React, { ReactNode, FC, forwardRef, RefObject } from 'react';
+import React, { ReactNode, FC, forwardRef } from 'react';
 import styled from 'styled-components';
 import {
   color,
@@ -134,9 +134,7 @@ interface BoxProps extends ComponentBaseProps {
   pl?: Space | ResponsiveSpace;
   px?: Space | ResponsiveSpace;
   py?: Space | ResponsiveSpace;
-  //
-  ref?: RefObject<any>;
-  //
+  ref?: any;
   onClick?: any;
 }
 
