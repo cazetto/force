@@ -84,7 +84,6 @@
   },
   "dependencies": {
     "@primer/octicons-react": "^9.6.0",
-    "force-components": "^0.0.16",
-    "force-tokens": "^0.0.6"
+    "force-tokens": "*"
   }
 }

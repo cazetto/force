@@ -66,7 +66,7 @@ const ImageSliderStyled = styled.div`
 
 // ThumbList
 interface ThumbListProps extends ComponentBaseProps {
-  children: { nextControl: ReactNode; prevControl: ReactNode };
+  children?: any;
   selectedColor?: Color;
 }
 

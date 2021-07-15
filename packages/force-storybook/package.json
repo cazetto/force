@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@storybook/preset-typescript": "^2.1.0",
-    "force-components": "^0.0.25",
+    "force-components": "*",
     "fork-ts-checker-webpack-plugin": "^4.1.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",

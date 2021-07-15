@@ -8,7 +8,7 @@
     "/** MONOREPO SCRIPTS */": "",
     "bootstrap": "npx lerna bootstrap",
     "/** DEV SCRIPTS */": "",
-    "dev:storybook": "lerna run --scope force-storybook dev",
+    "dev:storybook": "lerna run --scope force-storybook dev --stream",
     "dev:docs": "lerna run --scope force-docs dev",
     "dev:site": "lerna run --scope force-site dev",
     "dev:components": "lerna run --scope force-components dev",

@@ -10,6 +10,9 @@ import Box from './components/Box';
 import List from './components/List';
 import ListItem from './components/ListItem';
 import ImageSlider from './components/ImageSlider';
+import TextField from './components/TextField';
+
+const XX = { x: 1 };
 
 export {
   themePrimer,
@@ -22,4 +25,6 @@ export {
   List,
   ListItem,
   ImageSlider,
+  TextField,
+  XX,
 };

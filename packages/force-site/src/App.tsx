@@ -30,7 +30,7 @@ function App() {
           textAlign="center"
           mb="4"
         >
-          🛸 Force Design System 🛸
+          <span role="img" aria-label="Force Design System">🛸 Force Design System 🛸</span>
         </Text>
 
         <Text

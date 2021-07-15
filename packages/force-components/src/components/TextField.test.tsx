@@ -3,9 +3,9 @@ import { fireEvent, render } from '@testing-library/react';
 import TextField from './TextField';
 
 function setup() {
-  const props = { 'aria-label': 'Username' };
-  const utils = render(<TextField {...props} />);
-  const component = utils.getByLabelText(props['aria-label']) as HTMLInputElement;
+  const ariaLabel = 'Username';
+  const utils = render(<TextField ariaLabel={ariaLabel} />);
+  const component = utils.getByLabelText(ariaLabel) as HTMLInputElement;
   return {
     ...utils,
     component,
