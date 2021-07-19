@@ -7,6 +7,8 @@
   "scripts": {
     "/** MONOREPO SCRIPTS */": "",
     "bootstrap": "yarn && npx lerna bootstrap",
+    "prepare": "husky install",
+    "test": "",
     "/** DEV SCRIPTS */": "",
     "start:storybook": "lerna run --scope force-storybook start --stream",
     "start:site": "lerna run --scope force-site start --stream",
@@ -32,6 +34,7 @@
     "format:components": "lerna run --scope force-components format --stream"
   },
   "devDependencies": {
+    "husky": "^7.0.1",
     "lerna": "^4.0.0"
   }
 }
