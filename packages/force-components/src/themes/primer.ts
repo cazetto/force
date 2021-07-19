@@ -413,7 +413,7 @@ export const PrimerGlobalStyle = createGlobalStyle`
 `;
 
 export const extendPrimerGlobalStyle = (
-  customStyle: typeof primerDefaultStyle,
+  customStyle: typeof primerDefaultStyle
 ) => createGlobalStyle`
   ${primerDefaultStyle}
   ${customStyle};

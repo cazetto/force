@@ -6,11 +6,12 @@ import { ThemeProvider } from 'styled-components';
 import primerTheme from '../themes/primer';
 import Button from './Button';
 
-const setupButton = (props?: {}, children?: ReactNode) => render(
-  <ThemeProvider theme={primerTheme}>
-    <Button {...props}>{children}</Button>
-  </ThemeProvider>,
-);
+const setupButton = (props?: {}, children?: ReactNode) =>
+  render(
+    <ThemeProvider theme={primerTheme}>
+      <Button {...props}>{children}</Button>
+    </ThemeProvider>
+  );
 
 describe('Button Component', () => {
   test('should renders without errors', () => {
@@ -34,7 +35,7 @@ describe('Button Component', () => {
       new MouseEvent('click', {
         bubbles: true,
         cancelable: true,
-      }),
+      })
     );
     expect(isClicked).toBeTruthy();
   });

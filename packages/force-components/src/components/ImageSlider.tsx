@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/indent */
+
 import React, {
   FC,
   ReactNode,
@@ -40,7 +42,7 @@ const ImageSliderStyled = styled.div`
 `;
 
 const ImageSliderContext = createContext<
-ImageSliderContextInterface | undefined
+  ImageSliderContextInterface | undefined
 >(undefined);
 const { Provider: ImageSliderProvider } = ImageSliderContext;
 
@@ -73,16 +75,13 @@ interface ThumbListProps extends ComponentBaseProps {
 
 const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
   const { nextControl, prevControl } = children;
-  const { items, selectedItemIndex, setSelectedItemIndex } = useContext(
-    ImageSliderContext,
-  )!;
+  const { items, selectedItemIndex, setSelectedItemIndex } =
+    useContext(ImageSliderContext)!;
   let selectedRef: any;
 
   const handleClick = (event: any) => {
     if (setSelectedItemIndex) {
-      setSelectedItemIndex(
-        event.currentTarget.dataset.itemId,
-      );
+      setSelectedItemIndex(event.currentTarget.dataset.itemId);
     }
   };
 
@@ -96,8 +95,8 @@ const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
             selectedRef = ref;
             selectedRef.current.parentElement.scroll({
               left:
-                selectedRef.current.offsetLeft
-                - selectedRef.current.parentElement.offsetLeft,
+                selectedRef.current.offsetLeft -
+                selectedRef.current.parentElement.offsetLeft,
               behavior: 'smooth',
             });
           }
@@ -116,7 +115,7 @@ const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
               data-item-id={currentItemIndex}
               onClick={handleClick}
             >
-              <img alt={currentItem.image} src={currentItem.thumb} />
+              <img alt={currentItem?.thumb} src={currentItem.thumb} />
             </Box>
           );
         })}
@@ -136,7 +135,7 @@ ThumbList.propTypes = {
     PropTypes.shape({
       nextControl: PropTypes.node,
       prevControl: PropTypes.node,
-    }),
+    })
   ),
   // eslint-disable-next-line react/forbid-prop-types
   selectedColor: PropTypes.any,
@@ -154,7 +153,7 @@ const StyledImage = styled.img`
 
 const Image: FC<ImageProps> = () => {
   const { items, selectedItemIndex } = useContext(ImageSliderContext)!;
-  return <StyledImage src={items[selectedItemIndex].image} />;
+  return <StyledImage src={items[selectedItemIndex]?.image} />;
 };
 
 // Next and Prev Buttons
@@ -168,9 +167,8 @@ const ButtonStyled = styled.button`
 `;
 
 const NextButton: FC<NextPrevButton> = ({ children }) => {
-  const { items, selectedItemIndex, setSelectedItemIndex } = useContext(
-    ImageSliderContext,
-  )!;
+  const { items, selectedItemIndex, setSelectedItemIndex } =
+    useContext(ImageSliderContext)!;
 
   const handleClick = useCallback(() => {
     if (setSelectedItemIndex) {
@@ -191,9 +189,8 @@ NextButton.defaultProps = { children: undefined };
 NextButton.propTypes = { children: PropTypes.node };
 
 const PrevButton: FC<NextPrevButton> = ({ children }) => {
-  const { selectedItemIndex, setSelectedItemIndex } = useContext(
-    ImageSliderContext,
-  )!;
+  const { selectedItemIndex, setSelectedItemIndex } =
+    useContext(ImageSliderContext)!;
 
   const handleClick = useCallback(() => {
     if (setSelectedItemIndex) {

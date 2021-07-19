@@ -9,8 +9,10 @@ const setup = (props?: ImageSliderProps, children?: ReactNode) => {
   const items = props?.items || []; // ---> Example of logic inside tests? BAD CODE? Fix it...
   return render(
     <ThemeProvider theme={primerTheme}>
-      <ImageSlider items={items} {...props}>{children}</ImageSlider>
-    </ThemeProvider>,
+      <ImageSlider items={items} {...props}>
+        {children}
+      </ImageSlider>
+    </ThemeProvider>
   );
 };
 

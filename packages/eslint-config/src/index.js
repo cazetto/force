@@ -4,7 +4,8 @@ module.exports = {
     es2021: true
   },
   extends: [
-    'airbnb-typescript'
+    'airbnb-typescript',
+    'plugin:prettier/recommended'
   ],
   overrides: [
     {
@@ -27,24 +28,7 @@ module.exports = {
   },
   plugins: [
     'react',
-    '@typescript-eslint'
-  ],
-  rules: {
-    indent: [
-      'error',
-      2
-    ],
-    // linebreakstyle: [
-    //   'error',
-    //   'unix'
-    // ],
-    quotes: [
-      'error',
-      'single'
-    ],
-    semi: [
-      'error',
-      'always'
-    ]
-  }
+    '@typescript-eslint',
+    'prettier'
+  ]
 };

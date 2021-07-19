@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/indent */
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/jsx-props-no-spreading */
+
 import React, { forwardRef, FC, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { space, layout, color } from 'styled-system';
-import {
-  ComponentBaseProps, Size, Space, Variant,
-} from './typing';
+import { ComponentBaseProps, Size, Space, Variant } from './typing';
 
 type ButtonTypes = 'button' | 'submit' | 'reset';
 
@@ -39,7 +40,8 @@ const getCommonCss = ({
   sizeFocusedShadow,
   colorFocusedShadow,
   disabled,
-}: any) => css`
+}: any) => {
+  return css`
     display: inline-block;
     vertical-align: middle;
     text-align: center;
@@ -56,22 +58,25 @@ const getCommonCss = ({
     &:focus {
       outline: 0;
       :focus {
-        box-shadow: ${() => `0px 0px 0px ${sizeFocusedShadow} ${colorFocusedShadow}`};
+        box-shadow: ${() => {
+      return `0px 0px 0px ${sizeFocusedShadow} ${colorFocusedShadow}`;
+    }};
       }
     }
   `;
+};
 
 const getFilledCss = ({ colorHue, colorContrast, borderWidth }: any) => css`
-    color: ${colorContrast};
-    border: ${borderWidth} solid ${colorHue};
-    background-color: ${colorHue};
-  `;
+  color: ${colorContrast};
+  border: ${borderWidth} solid ${colorHue};
+  background-color: ${colorHue};
+`;
 
 const getOutlineCss = ({ colorHue, borderWidth }: any) => css`
-    color: ${colorHue};
-    border: ${borderWidth} solid ${colorHue};
-    background-color: transparent;
-  `;
+  color: ${colorHue};
+  border: ${borderWidth} solid ${colorHue};
+  background-color: transparent;
+`;
 
 export const ButtonStyled = styled.button.attrs(
   ({
@@ -83,7 +88,7 @@ export const ButtonStyled = styled.button.attrs(
   }: ButtonProps) => {
     if (!theme?.button) {
       throw new Error(
-        'Button: Force components need to be inside ThemeProvider in the component tree.',
+        'Button: Force components need to be inside ThemeProvider in the component tree.'
       );
     }
 
@@ -98,7 +103,7 @@ export const ButtonStyled = styled.button.attrs(
       borderWidth: theme?.button.sizes.borderWidth[size],
       outline,
     };
-  },
+  }
 )`
   ${(props) => getCommonCss(props)};
   ${(props) => (props.outline ? getOutlineCss(props) : getFilledCss(props))};
@@ -116,7 +121,7 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
     >
       {children}
     </ButtonStyled>
-  ),
+  )
 );
 
 Button.defaultProps = {

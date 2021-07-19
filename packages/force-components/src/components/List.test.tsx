@@ -5,11 +5,12 @@ import { ThemeProvider } from 'styled-components';
 import primerTheme from '../themes/primer';
 import List from './List';
 
-const setupList = (props?: {}, children?: ReactNode) => render(
-  <ThemeProvider theme={primerTheme}>
-    <List {...props}>{children}</List>
-  </ThemeProvider>,
-);
+const setupList = (props?: {}, children?: ReactNode) =>
+  render(
+    <ThemeProvider theme={primerTheme}>
+      <List {...props}>{children}</List>
+    </ThemeProvider>
+  );
 
 describe('List Component', () => {
   test('should renders without errors', () => {

@@ -20,7 +20,11 @@ const StyledInput = styled.input`
 
 export const TextField: FC<TextFieldProps> = (props = {}) => {
   const { ariaLabel, ...restProps } = props;
-  return <Box {...restProps}><StyledInput type="text" aria-label={ariaLabel} /></Box>;
+  return (
+    <Box {...restProps}>
+      <StyledInput type="text" aria-label={ariaLabel} />
+    </Box>
+  );
 };
 
 TextField.defaultProps = { ariaLabel: undefined };

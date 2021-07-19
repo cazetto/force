@@ -141,7 +141,7 @@ interface BoxProps extends ComponentBaseProps {
   onClick?: any;
 }
 
-const StyledBox = styled.div.attrs(() => {})`  
+const StyledBox = styled.div.attrs(() => {})`
   box-sizing: border-box;
   ${color}
   ${space}
@@ -158,7 +158,7 @@ const Box: FC<BoxProps> = forwardRef<HTMLElement, BoxProps>(
     <StyledBox {...rest} ref={ref}>
       {children}
     </StyledBox>
-  ),
+  )
 );
 
 Box.defaultProps = {

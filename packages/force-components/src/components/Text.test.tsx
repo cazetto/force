@@ -6,11 +6,12 @@ import { ThemeProvider } from 'styled-components';
 import primerTheme from '../themes/primer';
 import Text from './Text';
 
-const setupText = (props?: {}, children?: ReactNode) => render(
-  <ThemeProvider theme={primerTheme}>
-    <Text {...props}>{children}</Text>
-  </ThemeProvider>,
-);
+const setupText = (props?: {}, children?: ReactNode) =>
+  render(
+    <ThemeProvider theme={primerTheme}>
+      <Text {...props}>{children}</Text>
+    </ThemeProvider>
+  );
 
 describe('Text Component', () => {
   test('should renders without errors', () => {

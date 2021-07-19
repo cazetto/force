@@ -46,7 +46,7 @@ interface TextProps extends ComponentBaseProps {
 const TextStyled = styled.p.attrs(
   ({ theme, color, variant = 'primary' }: TextProps) => ({
     color: color ? theme?.colors[color] : theme?.text.colors[variant],
-  }),
+  })
 )`
   color: ${({ color }) => color};
   font-family: inherit;
@@ -59,7 +59,7 @@ const Text: FC<TextProps> = ({ children, ariaLabel, ...rest }) => {
   if (rest.color && rest.variant) {
     // eslint-disable-next-line no-console
     console.warn(
-      'Force Components: You are passing color and variant for a Text component, the color will prevail over variant.',
+      'Force Components: You are passing color and variant for a Text component, the color will prevail over variant.'
     );
   }
   return (
