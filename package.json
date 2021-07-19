@@ -8,7 +8,7 @@
     "/** MONOREPO SCRIPTS */": "",
     "bootstrap": "yarn && npx lerna bootstrap",
     "prepare": "husky install",
-    "test": "",
+    "test": "yarn lint:components",
     "/** DEV SCRIPTS */": "",
     "start:storybook": "lerna run --scope force-storybook start --stream",
     "start:site": "lerna run --scope force-site start --stream",
