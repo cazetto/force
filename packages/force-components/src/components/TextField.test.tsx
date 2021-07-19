@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import TextField from './TextField';
+import { TextField } from './TextField';
 
 function setup() {
   const ariaLabel = 'Username';
@@ -13,7 +13,6 @@ function setup() {
 }
 
 describe('TextField Component', () => {
-
   test('should render without errors', () => {
     const { component } = setup();
     expect(component).toBeTruthy();

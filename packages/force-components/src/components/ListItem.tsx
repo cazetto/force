@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { FC, ReactNode } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ComponentBaseProps } from './typing';
 
@@ -9,18 +11,19 @@ interface ListItemProps extends ComponentBaseProps {
   as?: Element;
 }
 
-const ListItem: FC<ListItemProps> = ({ children, ...rest }) => {
-  return (
-    <ListItemStyled {...rest} data-testid="list-item">
-      {children}
-    </ListItemStyled>
-  );
-};
-
 const ListItemStyled = styled.li`
   margin: 0;
   padding: 0;
   list-style: none;
 `;
+
+const ListItem: FC<ListItemProps> = ({ children, ...rest }) => (
+  <ListItemStyled {...rest} data-testid="list-item">
+    {children}
+  </ListItemStyled>
+);
+
+ListItem.defaultProps = { children: undefined };
+ListItem.propTypes = { children: PropTypes.node };
 
 export default ListItem;

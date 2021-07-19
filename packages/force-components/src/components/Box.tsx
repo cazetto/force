@@ -1,4 +1,7 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { ReactNode, FC, forwardRef } from 'react';
+import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
 import {
   color,
@@ -138,16 +141,6 @@ interface BoxProps extends ComponentBaseProps {
   onClick?: any;
 }
 
-const Box: FC<BoxProps> = forwardRef<HTMLElement, BoxProps>(
-  ({ children, ...rest }, ref) => {
-    return (
-      <StyledBox {...rest} ref={ref}>
-        {children}
-      </StyledBox>
-    );
-  }
-);
-
 const StyledBox = styled.div.attrs(() => {})`  
   box-sizing: border-box;
   ${color}
@@ -159,5 +152,21 @@ const StyledBox = styled.div.attrs(() => {})`
   ${position}
   ${border}
 `;
+
+const Box: FC<BoxProps> = forwardRef<HTMLElement, BoxProps>(
+  ({ children, ...rest }, ref) => (
+    <StyledBox {...rest} ref={ref}>
+      {children}
+    </StyledBox>
+  ),
+);
+
+Box.defaultProps = {
+  children: undefined,
+};
+
+Box.propTypes = {
+  children: PropTypes.node,
+};
 
 export default Box;

@@ -7,6 +7,7 @@ import React, {
   useCallback,
   useRef,
 } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ComponentBaseProps, Color } from './typing';
 import Box from './Box';
@@ -33,8 +34,13 @@ interface ImageSliderContextInterface {
   setSelectedItemIndex?: (value: number) => void;
 }
 
+const ImageSliderStyled = styled.div`
+  margin: 0;
+  padding: 0;
+`;
+
 const ImageSliderContext = createContext<
-  ImageSliderContextInterface | undefined
+ImageSliderContextInterface | undefined
 >(undefined);
 const { Provider: ImageSliderProvider } = ImageSliderContext;
 
@@ -59,11 +65,6 @@ const ImageSlider = ({ children, items }: ImageSliderProps) => {
   );
 };
 
-const ImageSliderStyled = styled.div`
-  margin: 0;
-  padding: 0;
-`;
-
 // ThumbList
 interface ThumbListProps extends ComponentBaseProps {
   children?: any;
@@ -73,22 +74,30 @@ interface ThumbListProps extends ComponentBaseProps {
 const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
   const { nextControl, prevControl } = children;
   const { items, selectedItemIndex, setSelectedItemIndex } = useContext(
-    ImageSliderContext
+    ImageSliderContext,
   )!;
   let selectedRef: any;
+
+  const handleClick = (event: any) => {
+    if (setSelectedItemIndex) {
+      setSelectedItemIndex(
+        event.currentTarget.dataset.itemId,
+      );
+    }
+  };
 
   return (
     <Box display="flex">
       {prevControl && prevControl}
       <Box display="flex" flexDirection="row" overflowX="scroll">
-        {items.map((currentItem: any, currentItemIndex: number) => {
+        {items.map((currentItem: Item, currentItemIndex: number) => {
           const ref = useRef(null);
           if (selectedItemIndex === currentItemIndex && ref?.current) {
             selectedRef = ref;
             selectedRef.current.parentElement.scroll({
               left:
-                selectedRef.current.offsetLeft -
-                selectedRef.current.parentElement.offsetLeft,
+                selectedRef.current.offsetLeft
+                - selectedRef.current.parentElement.offsetLeft,
               behavior: 'smooth',
             });
           }
@@ -103,16 +112,11 @@ const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
                   ? selectedColor || 'colorGray500'
                   : 'colorGray000'
               }
-              key={currentItemIndex}
+              key={currentItem.thumb}
               data-item-id={currentItemIndex}
-              onClick={(event: any) => {
-                setSelectedItemIndex &&
-                  setSelectedItemIndex(
-                    parseInt(event.currentTarget.dataset.itemId)
-                  )!;
-              }}
+              onClick={handleClick}
             >
-              <img src={currentItem.thumb} />
+              <img alt={currentItem.image} src={currentItem.thumb} />
             </Box>
           );
         })}
@@ -122,20 +126,36 @@ const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
   );
 };
 
+ThumbList.defaultProps = {
+  children: undefined,
+  selectedColor: undefined,
+};
+
+ThumbList.propTypes = {
+  children: PropTypes.arrayOf(
+    PropTypes.shape({
+      nextControl: PropTypes.node,
+      prevControl: PropTypes.node,
+    }),
+  ),
+  // eslint-disable-next-line react/forbid-prop-types
+  selectedColor: PropTypes.any,
+};
+
 // Image
 interface ImageProps extends ComponentBaseProps {
   children?: ReactNode;
 }
 
-const Image: FC<ImageProps> = () => {
-  const { items, selectedItemIndex } = useContext(ImageSliderContext)!;
-  return <StyledImage src={items[selectedItemIndex]['image']} />;
-};
-
 const StyledImage = styled.img`
   max-width: 100%;
   max-height: 100%;
 `;
+
+const Image: FC<ImageProps> = () => {
+  const { items, selectedItemIndex } = useContext(ImageSliderContext)!;
+  return <StyledImage src={items[selectedItemIndex].image} />;
+};
 
 // Next and Prev Buttons
 interface NextPrevButton extends ComponentBaseProps {
@@ -149,11 +169,13 @@ const ButtonStyled = styled.button`
 
 const NextButton: FC<NextPrevButton> = ({ children }) => {
   const { items, selectedItemIndex, setSelectedItemIndex } = useContext(
-    ImageSliderContext
+    ImageSliderContext,
   )!;
 
   const handleClick = useCallback(() => {
-    setSelectedItemIndex && setSelectedItemIndex(selectedItemIndex + 1)!;
+    if (setSelectedItemIndex) {
+      setSelectedItemIndex(selectedItemIndex + 1)!;
+    }
   }, [selectedItemIndex]);
 
   const disabled = selectedItemIndex === items.length - 1;
@@ -165,13 +187,18 @@ const NextButton: FC<NextPrevButton> = ({ children }) => {
   );
 };
 
+NextButton.defaultProps = { children: undefined };
+NextButton.propTypes = { children: PropTypes.node };
+
 const PrevButton: FC<NextPrevButton> = ({ children }) => {
   const { selectedItemIndex, setSelectedItemIndex } = useContext(
-    ImageSliderContext
+    ImageSliderContext,
   )!;
 
   const handleClick = useCallback(() => {
-    setSelectedItemIndex && setSelectedItemIndex(selectedItemIndex - 1)!;
+    if (setSelectedItemIndex) {
+      setSelectedItemIndex(selectedItemIndex - 1);
+    }
   }, [selectedItemIndex]);
 
   const disabled = selectedItemIndex === 0;
@@ -182,6 +209,9 @@ const PrevButton: FC<NextPrevButton> = ({ children }) => {
     </ButtonStyled>
   );
 };
+
+PrevButton.defaultProps = { children: undefined };
+PrevButton.propTypes = { children: PropTypes.node };
 
 // Thumb Slider Static Sub Components
 ImageSlider.Thumbs = ThumbList;

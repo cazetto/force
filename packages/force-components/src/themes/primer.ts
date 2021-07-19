@@ -1,6 +1,6 @@
 import tokens from 'force-tokens';
-import { Theme } from './typing';
 import { createGlobalStyle, css } from 'styled-components';
+import { Theme } from './typing';
 
 const {
   // Colors
@@ -367,7 +367,8 @@ const themePrimer: Theme = {
     xl: sizeTextXl,
   },
   fontWeights: {
-    // @TODO - Remove these "replaces" after create a custom transformer(style-dictionary) for font-weight in force-token
+    /* @TODO - Remove these "replaces" after create a custom
+    transformer(style-dictionary) for font-weight in force-token */
     100: sizeFontWeight100.replace(/\D/g, ''),
     200: sizeFontWeight200.replace(/\D/g, ''),
     300: sizeFontWeight300.replace(/\D/g, ''),
@@ -412,7 +413,7 @@ export const PrimerGlobalStyle = createGlobalStyle`
 `;
 
 export const extendPrimerGlobalStyle = (
-  customStyle: typeof primerDefaultStyle
+  customStyle: typeof primerDefaultStyle,
 ) => createGlobalStyle`
   ${primerDefaultStyle}
   ${customStyle};

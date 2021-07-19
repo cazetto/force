@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
@@ -9,13 +10,13 @@ const setup = (props?: ImageSliderProps, children?: ReactNode) => {
   return render(
     <ThemeProvider theme={primerTheme}>
       <ImageSlider items={items} {...props}>{children}</ImageSlider>
-    </ThemeProvider>
+    </ThemeProvider>,
   );
 };
 
 describe('Content Slider Component', () => {
   test('should render without errors', () => {
-    const ImageSlider = setup();
-    expect(ImageSlider.getByTestId('thumb-slider')).toBeTruthy();
+    const component = setup();
+    expect(component.getByTestId('thumb-slider')).toBeTruthy();
   });
 });

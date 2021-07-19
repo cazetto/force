@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
@@ -5,13 +6,11 @@ import { ThemeProvider } from 'styled-components';
 import primerTheme from '../themes/primer';
 import Box from './Box';
 
-const setupBox = (props?: {}, children?: ReactNode) => {
-  return render(
-    <ThemeProvider theme={primerTheme}>
-      <Box {...props}>{children}</Box>
-    </ThemeProvider>
-  );
-};
+const setupBox = (props?: {}, children?: ReactNode) => render(
+  <ThemeProvider theme={primerTheme}>
+    <Box {...props}>{children}</Box>
+  </ThemeProvider>,
+);
 
 describe('Box Component', () => {
   test('should renders without errors', () => {
