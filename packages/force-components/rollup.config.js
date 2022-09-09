@@ -18,6 +18,12 @@ export default {
       exports: 'named',
       sourcemap: true,
     },
+    {
+      file: pkg.bundle,
+      format: 'umd',
+      name: 'bundle',
+      sourcemap: true
+    },
   ],
   plugins: [
     external(),

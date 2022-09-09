@@ -11,6 +11,7 @@
   ],
   "types": "dist/index.d.ts",
   "module": "dist/index.es.js",
+  "bundle": "dist/force-components.umd.development.js",
   "jsnext:main": "dist/index.es.js",
   "directories": {
     "src": "src"
