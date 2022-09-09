@@ -32,6 +32,8 @@ interface ButtonProps extends ComponentBaseProps {
   mr?: Space;
   mb?: Space;
   ml?: Space;
+  mx?: Space;
+  my?: Space;
 }
 
 const getCommonCss = ({

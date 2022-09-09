@@ -1,6 +1,6 @@
 {
   "name": "force-components",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "Force Design System components",
   "author": "André Pesci Cazetto <cazetto.andre@gmail.com>",
   "homepage": "https://github.com/cazetto/force#readme",
@@ -52,7 +52,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
-    "force-components": "^0.0.28",
+    "force-components": "^0.0.29",
     "force-tokens": "0.0.6",
     "jest": "^25.1.0",
     "prop-types": "^15.7.2",
