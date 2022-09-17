@@ -1,10 +1,16 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { TextField } from './TextField';
+import { ThemeProvider } from 'styled-components';
+import primerTheme from '../themes/primer';
 
 function setup() {
   const ariaLabel = 'Username';
-  const utils = render(<TextField ariaLabel={ariaLabel} />);
+  const utils = render(
+    <ThemeProvider theme={primerTheme}>
+      <TextField ariaLabel={ariaLabel} />
+    </ThemeProvider>
+  );
   const component = utils.getByLabelText(ariaLabel) as HTMLInputElement;
   return {
     ...utils,
