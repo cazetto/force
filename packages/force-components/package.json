@@ -25,7 +25,8 @@
     "build": "rollup -c",
     "lint": "eslint src/**/*.{ts,tsx}",
     "format": "prettier -w .",
-    "test": "jest --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "test:updateSnapshot": "jest --updateSnapshot",
     "doc": "typedoc --options typedoc.json",
     "prepublishOnly": "npm run build",
@@ -37,13 +38,12 @@
   "dependencies": {
     "@primer/octicons-react": "^9.6.0",
     "@testing-library/jest-dom": "^5.1.1",
-    "@testing-library/react": "^9.5.0",
-    "@types/jest": "^25.2.1",
+    "@testing-library/react": "^12.2.0",
+    "@types/jest": "^29.0.3",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/styled-components": "^5.1.11",
     "@types/styled-system": "^5.1.9",
-    "styled-system": "^5.1.5",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.28.3",
     "eslint": "^7.31.0",
@@ -65,6 +65,7 @@
     "rollup-plugin-typescript2": "^0.26.0",
     "styled-components": "^5.0.1",
     "styled-normalize": "^8.0.7",
+    "styled-system": "^5.1.5",
     "ts-jest": "^25.2.1",
     "typescript": "^3.8.3"
   },
@@ -98,8 +99,8 @@
   "devDependencies": {
     "@force/eslint-config": "^0.0.1",
     "eslint": "^7.31.0",
-    "eslint-plugin-prettier": "^3.4.0",
     "eslint-config-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "prettier": "^2.3.2"
   }
 }
