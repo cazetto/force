@@ -6,7 +6,9 @@
   ],
   "scripts": {
     "/** MONOREPO SCRIPTS */": "",
-    "bootstrap": "npx lerna bootstrap",
+    "bootstrap": "yarn && npx lerna bootstrap",
+    "prepare": "husky install",
+    "test": "yarn test:components",
     "/** DEV SCRIPTS */": "",
     "start:storybook": "lerna run --scope force-storybook start --stream",
     "start:site": "lerna run --scope force-site start --stream",
@@ -21,15 +23,21 @@
     "build:all": "lerna run build --stream",
     "/** TEST SCRIPTS */": "",
     "test:site": "lerna run --scope force-site test --since master",
-    "test:components": "lerna run --scope force-components test --since master --stream",
+    "test:components": "lerna run --scope force-components test --stream",
     "test:all": "lerna run test --parallel --since master",
     "/** DOC SCRIPTS */": "",
     "doc:components": "lerna run --scope force-components doc",
-     "/** CI SCRIPTS */": "",
+    "/** CI SCRIPTS */": "",
+    "ci:install": "npm install",
+    "ci:test": "yarn run test:components",
+    "ci:build": "npm run build:tokens && npm run build:components",
     "percy": "lerna run --scope force-storybook build-storybook && percy-storybook --widths=320,1280",
-    "chromatic": "CHROMATIC_APP_CODE=1xvyynp25goh lerna run --scope force-storybook chromatic"
+    "chromatic": "CHROMATIC_APP_CODE=1xvyynp25goh lerna run --scope force-storybook chromatic",
+    "lint:components": "lerna run --scope force-components lint --stream",
+    "format:components": "lerna run --scope force-components format --stream"
   },
   "devDependencies": {
-    "lerna": "^3.20.2"
+    "husky": "^7.0.1",
+    "lerna": "^4.0.0"
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
@@ -5,13 +6,12 @@ import primerTheme from '../themes/primer';
 import List from './List';
 import ListItem from './ListItem';
 
-const setupList = (props?: {}, children?: ReactNode) => {
-  return render(
+const setupList = (props?: {}, children?: ReactNode) =>
+  render(
     <ThemeProvider theme={primerTheme}>
       <List {...props}>{children}</List>
     </ThemeProvider>
   );
-};
 
 describe('ListItem Component', () => {
   test('should renders without errors', () => {
@@ -19,7 +19,7 @@ describe('ListItem Component', () => {
       undefined,
       <>
         <ListItem>Item 1</ListItem>
-        <ListItem></ListItem>
+        <ListItem />
         <ListItem as="li">Item 3</ListItem>
       </>
     );

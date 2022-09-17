@@ -1,4 +1,5 @@
 import { Theme } from '../themes/typing';
+
 export interface ComponentBaseProps {
   theme?: Theme;
 }
