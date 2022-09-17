@@ -9,6 +9,7 @@
     "allowJs": false,
     "declaration": true,
     "moduleResolution": "node",
+    "types": ["node", "@types/jest", "jest", "@testing-library/jest-dom"],
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
