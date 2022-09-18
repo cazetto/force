@@ -1,6 +1,6 @@
 {
   "name": "@force/eslint-config",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Force eslint config",
   "author": "André <cazetto.andre@gmail.com>",
   "homepage": "https://github.com/cazetto/force#readme",
