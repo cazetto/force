@@ -16,14 +16,14 @@ import Box from './Box';
 
 type Element = 'ul' | 'ol' | 'dl';
 
-type RenderProps = (selectedItem: any) => ReactNode;
+type RenderProps = (selectedItem: Item) => ReactNode;
 
 type Item = {
+  id?: string;
   thumb: string;
   image: string;
 };
 
-// ImageSlider
 export interface ImageSliderProps extends ComponentBaseProps {
   items: Item[];
   children: ReactNode | RenderProps;
@@ -67,21 +67,28 @@ const ImageSlider = ({ children, items }: ImageSliderProps) => {
   );
 };
 
-// ThumbList
+interface ThumbListControl {
+  next?: ReactNode;
+  prev?: ReactNode;
+}
+
 interface ThumbListProps extends ComponentBaseProps {
-  children?: any;
+  control?: ThumbListControl;
   selectedColor?: Color;
 }
 
-const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
-  const { nextControl, prevControl } = children;
+const ThumbList: FC<ThumbListProps> = ({ control, selectedColor }) => {
+  const nextControl = control?.next;
+  const prevControl = control?.prev;
   const { items, selectedItemIndex, setSelectedItemIndex } =
     useContext(ImageSliderContext)!;
-  let selectedRef: any;
 
-  const handleClick = (event: any) => {
+  let selectedRef: React.RefObject<HTMLElement>;
+
+  const handleClick = (event: React.SyntheticEvent<HTMLElement>) => {
     if (setSelectedItemIndex) {
-      setSelectedItemIndex(event.currentTarget.dataset.itemId);
+      const itemId = event.currentTarget.dataset.itemId;
+      setSelectedItemIndex(Number(itemId));
     }
   };
 
@@ -90,15 +97,17 @@ const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
       {prevControl && prevControl}
       <Box display="flex" flexDirection="row" overflowX="scroll">
         {items.map((currentItem: Item, currentItemIndex: number) => {
-          const ref = useRef(null);
+          const ref = useRef<HTMLElement | null>(null);
           if (selectedItemIndex === currentItemIndex && ref?.current) {
             selectedRef = ref;
-            selectedRef.current.parentElement.scroll({
-              left:
-                selectedRef.current.offsetLeft -
-                selectedRef.current.parentElement.offsetLeft,
-              behavior: 'smooth',
-            });
+            if (selectedRef.current && selectedRef.current.parentElement) {
+              selectedRef.current.parentElement.scroll({
+                left:
+                  selectedRef.current.offsetLeft -
+                  selectedRef.current.parentElement.offsetLeft,
+                behavior: 'smooth',
+              });
+            }
           }
           return (
             <Box
@@ -111,7 +120,7 @@ const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
                   ? selectedColor || 'colorGray500'
                   : 'colorGray000'
               }
-              key={currentItem.thumb}
+              key={currentItem.id || currentItemIndex.toString()}
               data-item-id={currentItemIndex}
               onClick={handleClick}
             >
@@ -126,19 +135,15 @@ const ThumbList: FC<ThumbListProps> = ({ children, selectedColor }) => {
 };
 
 ThumbList.defaultProps = {
-  children: undefined,
+  control: undefined,
   selectedColor: undefined,
 };
 
 ThumbList.propTypes = {
-  children: PropTypes.arrayOf(
-    PropTypes.shape({
-      nextControl: PropTypes.node,
-      prevControl: PropTypes.node,
-    })
-  ),
-  // eslint-disable-next-line react/forbid-prop-types
-  selectedColor: PropTypes.any,
+  control: PropTypes.shape({
+    next: PropTypes.node,
+    prev: PropTypes.node,
+  }),
 };
 
 // Image

@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import { TextField } from './TextField';
+import TextField from './TextField';
 import { ThemeProvider } from 'styled-components';
 import primerTheme from '../themes/primer';
 
