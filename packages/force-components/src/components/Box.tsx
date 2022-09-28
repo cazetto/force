@@ -62,6 +62,8 @@ import {
 interface BoxProps extends ComponentBaseProps {
   children?: ReactNode;
   role?: ReactNode;
+  as?: 'button';
+  alt?: string;
   // Color (styled-system)
   bg?: Color | ResponsiveColor;
   color?: Color | ResponsiveColor;

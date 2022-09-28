@@ -17,6 +17,7 @@ type Item = {
   id?: string;
   thumb: string;
   image: string;
+  title?: string;
 };
 
 export interface ImageSliderProps extends ComponentBaseProps {
@@ -38,7 +39,7 @@ const { Provider: ImageSliderProvider } = ImageSliderContext;
 function ImageSlider({ children, items }: ImageSliderProps): JSX.Element {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
   return (
-    <Box role="img">
+    <Box role="figure">
       <ImageSliderProvider
         value={{
           items,
@@ -72,7 +73,7 @@ function Thumbs({ control, selectedColor }: ThumbListProps): JSX.Element {
   const { items, selectedItemIndex, setSelectedItemIndex } =
     useContext(ImageSliderContext)!;
 
-  let selectedRef: React.RefObject<HTMLElement>;
+  // let selectedRef: React.RefObject<HTMLElement>;
 
   const handleClick = (event: React.SyntheticEvent<HTMLElement>) => {
     if (setSelectedItemIndex) {
@@ -82,21 +83,21 @@ function Thumbs({ control, selectedColor }: ThumbListProps): JSX.Element {
   };
 
   return (
-    <Box display="flex" role="list">
+    <Box display="flex" role="menu">
       {prevControl && prevControl}
       <Box display="flex" flexDirection="row" overflowX="scroll">
         {items.map((currentItem: Item, currentItemIndex: number) => {
           const ref = useRef<HTMLElement | null>(null);
           if (selectedItemIndex === currentItemIndex && ref?.current) {
-            selectedRef = ref;
-            if (selectedRef.current && selectedRef.current.parentElement) {
-              selectedRef.current.parentElement.scroll({
-                left:
-                  selectedRef.current.offsetLeft -
-                  selectedRef.current.parentElement.offsetLeft,
-                behavior: 'smooth',
-              });
-            }
+            // selectedRef = ref;
+            // if (selectedRef.current && selectedRef.current.parentElement) {
+            //   selectedRef.current.parentElement.scroll({
+            //     left:
+            //       selectedRef.current.offsetLeft -
+            //       selectedRef.current.parentElement.offsetLeft,
+            //     behavior: 'smooth',
+            //   });
+            // }
           }
           return (
             <Box
@@ -111,9 +112,11 @@ function Thumbs({ control, selectedColor }: ThumbListProps): JSX.Element {
               }
               key={currentItem.id || currentItemIndex.toString()}
               data-item-id={currentItemIndex}
+              as="button"
+              role="button"
               onClick={handleClick}
             >
-              <img alt={currentItem?.thumb} src={currentItem.thumb} />
+              <img alt={currentItem?.title} src={currentItem.thumb} />
             </Box>
           );
         })}
@@ -138,7 +141,7 @@ const StyledImage = styled.img`
 
 function Image(): JSX.Element {
   const { items, selectedItemIndex } = useContext(ImageSliderContext)!;
-  return <StyledImage src={items[selectedItemIndex]?.image} />;
+  return <StyledImage role="img" src={items[selectedItemIndex]?.image} />;
 }
 
 // Next and Prev Buttons
