@@ -29,4 +29,17 @@ describe('Box Component', () => {
     userEvent.click(container.getByText(buttonLabel));
     expect(handleClick).toHaveBeenCalled();
   });
+
+  test('renders as an Anchor without crashing', () => {
+    const linkLabel = 'Box as an Anchor';
+    const linkURL = 'http://www.google.com.br';
+    const { getByText } = render(
+      <ThemeProvider theme={primerTheme}>
+        <Box as="a" href={linkURL}>
+          {linkLabel}
+        </Box>
+      </ThemeProvider>
+    );
+    expect(getByText(linkLabel)).toHaveAttribute('href', linkURL);
+  });
 });
