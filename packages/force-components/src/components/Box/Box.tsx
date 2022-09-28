@@ -57,7 +57,7 @@ import {
   GridTemplateAreas,
   Position,
   Globals,
-} from './typing';
+} from '../typing';
 
 interface BoxProps extends ComponentBaseProps {
   children?: ReactNode;
@@ -163,10 +163,6 @@ const Box: FC<BoxProps> = forwardRef<HTMLElement, BoxProps>(
     </StyledBox>
   )
 );
-
-Box.defaultProps = {
-  children: undefined,
-};
 
 Box.propTypes = {
   children: PropTypes.node,

@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { ThemeProvider } from 'styled-components';
-import primerTheme from '../themes/primer';
+import primerTheme from '../../themes/primer';
 import Box from './Box';
 
 const setupBox = (props?: {}, children?: ReactNode) =>
