@@ -59,11 +59,27 @@ import {
   Globals,
 } from '../typing';
 
+type Element =
+  | 'div'
+  | 'section'
+  | 'article'
+  | 'header'
+  | 'footer'
+  | 'aside'
+  | 'span'
+  | 'nav'
+  | 'main'
+  | 'figure'
+  | 'figcaption'
+  | 'button'
+  | 'a';
+
 interface BoxProps extends ComponentBaseProps {
   children?: ReactNode;
   role?: ReactNode;
-  as?: 'button';
+  as?: Element;
   alt?: string;
+  href?: string;
   // Color (styled-system)
   bg?: Color | ResponsiveColor;
   color?: Color | ResponsiveColor;

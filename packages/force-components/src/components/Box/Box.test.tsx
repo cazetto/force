@@ -1,21 +1,32 @@
-/* eslint-disable react/jsx-props-no-spreading */
-import React, { ReactNode } from 'react';
-import { render } from '@testing-library/react';
+import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { ThemeProvider } from 'styled-components';
 import primerTheme from '../../themes/primer';
 import Box from './Box';
 
-const setupBox = (props?: {}, children?: ReactNode) =>
-  render(
-    <ThemeProvider theme={primerTheme}>
-      <Box {...props}>{children}</Box>
-    </ThemeProvider>
-  );
-
 describe('Box Component', () => {
-  test('should renders without errors', () => {
-    const box = setupBox(undefined);
-    expect(box).toBeTruthy();
+  test('renders without crashing', () => {
+    const container = render(
+      <ThemeProvider theme={primerTheme}>
+        <Box>Box</Box>
+      </ThemeProvider>
+    );
+    expect(container.getByText('Box')).toBeInTheDocument();
+  });
+
+  test('renders as a Button without crashing', () => {
+    const buttonLabel = 'Box as a Button';
+    const handleClick = jest.fn();
+    const container = render(
+      <ThemeProvider theme={primerTheme}>
+        <Box as="button" onClick={handleClick}>
+          {buttonLabel}
+        </Box>
+      </ThemeProvider>
+    );
+    userEvent.click(container.getByText(buttonLabel));
+    expect(handleClick).toHaveBeenCalled();
   });
 });

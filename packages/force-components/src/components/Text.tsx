@@ -15,10 +15,10 @@ import {
   LineHeight,
 } from './typing';
 
-type ElementType = 'p' | 'span' | 'div';
+type Element = 'p' | 'span' | 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 interface TextProps extends ComponentBaseProps {
-  as?: ElementType;
+  as?: Element;
   children?: ReactNode;
   variant?: Variant;
   color?: Color;
