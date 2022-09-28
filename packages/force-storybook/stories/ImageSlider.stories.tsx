@@ -15,32 +15,30 @@ export default { title: 'Image Slider' };
 const image1 = {
   thumb: 'https://via.placeholder.com/150/e743b',
   image: 'https://via.placeholder.com/600/e743b',
-  title: 'Image A',
   other: 'A',
 };
 
 const image2 = {
   thumb: 'https://via.placeholder.com/150/a393af',
   image: 'https://via.placeholder.com/600/a393af',
-  title: 'Image B',
   other: 'B',
 };
 
 const mockedData = [
-  { ...image1, id: '1' },
-  { ...image2, id: '2' },
-  { ...image1, id: '3' },
-  { ...image2, id: '4' },
-  { ...image1, id: '5' },
-  { ...image2, id: '6' },
-  { ...image1, id: '7' },
-  { ...image2, id: '8' },
-  { ...image1, id: '9' },
-  { ...image2, id: '10' },
-  { ...image1, id: '11' },
-  { ...image2, id: '12' },
-  { ...image2, id: '13' },
-  { ...image2, id: '14' },
+  { ...image1, id: '1', title: 'Image 1' },
+  { ...image2, id: '2', title: 'Image 2' },
+  { ...image1, id: '3', title: 'Image 3' },
+  { ...image2, id: '4', title: 'Image 4' },
+  { ...image1, id: '5', title: 'Image 5' },
+  { ...image2, id: '6', title: 'Image 6' },
+  { ...image1, id: '7', title: 'Image 7' },
+  { ...image2, id: '8', title: 'Image 8' },
+  { ...image1, id: '9', title: 'Image 9' },
+  { ...image2, id: '10', title: 'Image 10' },
+  { ...image1, id: '11', title: 'Image 11' },
+  { ...image2, id: '12', title: 'Image 12' },
+  { ...image1, id: '13', title: 'Image 13' },
+  { ...image2, id: '14', title: 'Image 14' },
 ];
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
@@ -52,22 +50,22 @@ export const WithChildren = () => (
   <ForceThemeProvider theme={themePrimer} globalStyle={<PrimerGlobalStyle />}>
     <Box>
       <ImageSlider items={mockedData}>
-        <Box height='400px' display='flex' justifyContent='center'>
-          <ImageSlider.Image />
+        <Box height='600px' display='flex' justifyContent='center'>
+          <ImageSlider.ImageDisplay />
         </Box>
         <Box>
-          <ImageSlider.Thumbs
+          <ImageSlider.ThumbsList
             selectedColor='colorGray600'
             control={{
               prev: (
-                <ImageSlider.Prev>
+                <ImageSlider.PrevButton>
                   <Octicon icon={ChevronLeft} />
-                </ImageSlider.Prev>
+                </ImageSlider.PrevButton>
               ),
               next: (
-                <ImageSlider.Next>
+                <ImageSlider.NextButton>
                   <Octicon icon={ChevronRight} />
-                </ImageSlider.Next>
+                </ImageSlider.NextButton>
               ),
             }}
           />
@@ -83,20 +81,20 @@ export const WithRenderProps = () => (
       <ImageSlider items={mockedData}>
         {(selected: Selected) => (
           <>
-            <ImageSlider.Image />
+            <ImageSlider.ImageDisplay />
             <Text pl='2' pr='2'>
               Image Title: {selected?.title}
             </Text>
             <Box>
-              <ImageSlider.Thumbs />
-              <ImageSlider.Prev>
+              <ImageSlider.ThumbsList />
+              <ImageSlider.PrevButton>
                 <Octicon icon={ChevronLeft} />
-                Prev
-              </ImageSlider.Prev>
-              <ImageSlider.Next>
+                PrevButton
+              </ImageSlider.PrevButton>
+              <ImageSlider.NextButton>
                 Next
                 <Octicon icon={ChevronRight} />
-              </ImageSlider.Next>
+              </ImageSlider.NextButton>
             </Box>
           </>
         )}
