@@ -24,6 +24,7 @@
     "/** TEST SCRIPTS */": "",
     "test:site": "lerna run --scope force-site test --since master",
     "test:components": "lerna run --scope force-components test --stream",
+    "test:components:watch": "lerna run --scope force-components test:watch --stream",
     "test:all": "lerna run test --parallel --since master",
     "/** DOC SCRIPTS */": "",
     "doc:components": "lerna run --scope force-components doc",

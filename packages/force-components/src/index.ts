@@ -9,8 +9,8 @@ import Text from './components/Text';
 import Box from './components/Box';
 import List from './components/List';
 import ListItem from './components/ListItem';
-import ImageSlider from './components/ImageSlider';
-export { TextField } from './components/TextField';
+import ImageSlider from './components/ImageSlider/ImageSlider';
+import TextField from './components/TextField';
 
 export {
   themePrimer,
@@ -23,4 +23,5 @@ export {
   List,
   ListItem,
   ImageSlider,
+  TextField,
 };

@@ -17,7 +17,7 @@ const StyledInput = styled.input`
   padding: 2px 10px 2px 10px;
 `;
 
-export const TextField: FC<TextFieldProps> = (props = {}) => {
+const TextField: FC<TextFieldProps> = (props = {}) => {
   const { ariaLabel, ...restProps } = props;
   return (
     <Box {...restProps}>
@@ -28,3 +28,5 @@ export const TextField: FC<TextFieldProps> = (props = {}) => {
 
 TextField.defaultProps = { ariaLabel: undefined };
 TextField.propTypes = { ariaLabel: PropTypes.string };
+
+export default TextField;
