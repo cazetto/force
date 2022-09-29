@@ -1,6 +1,6 @@
 name: Node.js CI
 on:
-  [pull_request]
+  [push]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,3 +16,7 @@ jobs:
     - run: npm run bootstrap
     - run: npm run ci:test
     - run: npm run ci:build
+    - run: npm ci
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

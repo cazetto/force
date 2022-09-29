@@ -9655,6 +9655,44 @@ force-components@0.0.28, force-components@^0.0.28:
     force-components "^0.0.16"
     force-tokens "^0.0.6"
 
+force-components@0.0.30:
+  version "0.0.30"
+  resolved "https://registry.yarnpkg.com/force-components/-/force-components-0.0.30.tgz#187bde5977c52bcf6d2180f80273ed9118ecb031"
+  integrity sha512-joF04J8XYAaZPO16fRb3yL+v9nfUgrEbBP181HSA2xjjfCD93vkIXK2WMbry7vYLx0BRnAgUJw9V3rmizcb+4Q==
+  dependencies:
+    "@primer/octicons-react" "^9.6.0"
+    "@testing-library/jest-dom" "^5.1.1"
+    "@testing-library/react" "^9.5.0"
+    "@types/jest" "^25.2.1"
+    "@types/react" "^16.9.23"
+    "@types/react-dom" "^16.9.5"
+    "@types/styled-components" "^5.1.11"
+    "@types/styled-system" "^5.1.9"
+    "@typescript-eslint/eslint-plugin" "^4.4.1"
+    "@typescript-eslint/parser" "^4.28.3"
+    eslint "^7.31.0"
+    eslint-config-airbnb-typescript "^12.3.1"
+    eslint-plugin-import "^2.22.0"
+    eslint-plugin-jsx-a11y "^6.3.1"
+    eslint-plugin-react "^7.20.3"
+    eslint-plugin-react-hooks "^4.0.8"
+    force-components "^0.0.29"
+    force-tokens "0.0.6"
+    jest "^25.1.0"
+    prop-types "^15.7.2"
+    react "^16.13.0"
+    react-dom "^16.13.0"
+    rollup "^2.0.0"
+    rollup-plugin-commonjs "^10.1.0"
+    rollup-plugin-node-resolve "^5.2.0"
+    rollup-plugin-peer-deps-external "^2.2.2"
+    rollup-plugin-typescript2 "^0.26.0"
+    styled-components "^5.0.1"
+    styled-normalize "^8.0.7"
+    styled-system "^5.1.5"
+    ts-jest "^25.2.1"
+    typescript "^3.8.3"
+
 force-components@^0.0.16:
   version "0.0.16"
   resolved "https://registry.yarnpkg.com/force-components/-/force-components-0.0.16.tgz#d53e01ca1636bce07a1a8f8e3aa214b99f0742e3"
@@ -9700,6 +9738,11 @@ force-components@^0.0.29:
     styled-system "^5.1.5"
     ts-jest "^25.2.1"
     typescript "^3.8.3"
+
+force-tokens@0.0.6, force-tokens@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/force-tokens/-/force-tokens-0.0.6.tgz#97e85557dae1f5073d412d6851c1f9dbd6d339d3"
+  integrity sha512-lGSUhqiFKToMWQ87Clf5c4es0ae4zZM26uLlqInuG2N3l2Vn9EPqxpRVcXH3UwUPrt+NZJ7xE1CedxZYFxnkxw==
 
 foreground-child@^2.0.0:
   version "2.0.0"
