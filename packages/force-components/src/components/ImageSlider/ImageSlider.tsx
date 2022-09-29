@@ -73,7 +73,7 @@ function Thumbs({ control, selectedColor }: ThumbListProps): JSX.Element {
   const { items, selectedItemIndex, setSelectedItemIndex } =
     useContext(ImageSliderContext)!;
 
-  // let selectedRef: React.RefObject<HTMLElement>;
+  let selectedRef: React.RefObject<HTMLElement>;
 
   const handleClick = (event: React.SyntheticEvent<HTMLElement>) => {
     if (setSelectedItemIndex) {
@@ -89,15 +89,19 @@ function Thumbs({ control, selectedColor }: ThumbListProps): JSX.Element {
         {items.map((currentItem: Item, currentItemIndex: number) => {
           const ref = useRef<HTMLElement | null>(null);
           if (selectedItemIndex === currentItemIndex && ref?.current) {
-            // selectedRef = ref;
-            // if (selectedRef.current && selectedRef.current.parentElement) {
-            //   selectedRef.current.parentElement.scroll({
-            //     left:
-            //       selectedRef.current.offsetLeft -
-            //       selectedRef.current.parentElement.offsetLeft,
-            //     behavior: 'smooth',
-            //   });
-            // }
+            selectedRef = ref;
+            if (
+              selectedRef.current &&
+              selectedRef.current.parentElement &&
+              selectedRef.current.parentElement.scroll
+            ) {
+              selectedRef.current.parentElement.scroll({
+                left:
+                  selectedRef.current.offsetLeft -
+                  selectedRef.current.parentElement.offsetLeft,
+                behavior: 'smooth',
+              });
+            }
           }
           return (
             <Box
@@ -110,6 +114,7 @@ function Thumbs({ control, selectedColor }: ThumbListProps): JSX.Element {
                   ? selectedColor || 'colorGray500'
                   : 'colorGray000'
               }
+              borderWidth="0"
               key={currentItem.id || currentItemIndex.toString()}
               data-item-id={currentItemIndex}
               as="button"
