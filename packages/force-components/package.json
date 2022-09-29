@@ -1,6 +1,6 @@
 {
   "name": "force-components",
-  "version": "0.0.30",
+  "version": "0.1.2",
   "description": "Force Design System components",
   "author": "André Pesci Cazetto <cazetto.andre@gmail.com>",
   "homepage": "https://github.com/cazetto/force#readme",
@@ -98,7 +98,7 @@
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
-    "@force/eslint-config": "^0.0.1",
+    "@force/eslint-config": "^0.1.2",
     "eslint": "^7.31.0",
     "eslint-config-prettier": "^3.4.0",
     "eslint-plugin-prettier": "^3.4.0",
