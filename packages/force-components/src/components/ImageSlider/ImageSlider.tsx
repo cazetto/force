@@ -9,7 +9,7 @@ import React, {
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ComponentBaseProps, Color } from '../typing';
-import Box from '../Box';
+import Box from '../Box/Box';
 
 type RenderProps = (selectedItem: Item) => ReactNode;
 

@@ -23,8 +23,8 @@ const items = [
   { ...image2, id: '2', title: 'Image 2' },
 ];
 
-describe('Image Slider Component', () => {
-  test('ImageSlider renders without crashing', () => {
+describe('ImageSlider Component', () => {
+  test('renders without crashing', () => {
     const component = render(<ImageSlider items={[]}></ImageSlider>);
     expect(component.getByRole('figure')).toBeInTheDocument();
   });

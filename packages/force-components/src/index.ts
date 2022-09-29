@@ -6,7 +6,7 @@ import ForceThemeProvider from './components/ThemeProvider';
 
 import Button from './components/Button';
 import Text from './components/Text';
-import Box from './components/Box';
+import Box from './components/Box/Box';
 import List from './components/List';
 import ListItem from './components/ListItem';
 import ImageSlider from './components/ImageSlider/ImageSlider';

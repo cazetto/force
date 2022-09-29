@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Box from './Box';
+import Box from './Box/Box';
 import { ComponentBaseProps } from './typing';
 
 export interface TextFieldProps extends ComponentBaseProps {
