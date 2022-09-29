@@ -1,8 +1,8 @@
-name: Node.js CI
+name: Publish
 on:
   [push]
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -13,6 +13,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+        registry-url: https://registry.npmjs.org/
     - run: npm run bootstrap
     - run: npm run ci:test
     - run: npm run ci:build
