@@ -16,11 +16,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         registry-url: https://registry.npmjs.org/
-    - run: npm run bootstrap
-    - run: npm run ci:test
-    - run: npm run ci:build
-    - run: npm publish
-      with:
-        FOLDER: ./packages/force-components/dist
+    - run: yarn bootstrap
+    - run: yarn ci:test
+    - run: yarn ci:build
+    - run: yarn publish:all
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
