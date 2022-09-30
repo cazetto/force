@@ -19,12 +19,8 @@ jobs:
     - run: npm run bootstrap
     - run: npm run ci:test
     - run: npm run ci:build
-    - name: Fucking publish
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        registry-url: https://registry.npmjs.org/
     - run: npm publish
-      working-directory: ./packages/force-components
+      with:
+        FOLDER: ./packages/force-components/dist
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
