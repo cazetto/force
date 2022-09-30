@@ -19,6 +19,7 @@ jobs:
     - run: npm run bootstrap
     - run: npm run ci:test
     - run: npm run ci:build
+    - name: Fucking publish
     - run: npm publish
       working-directory: ./packages/force-components
       env:
